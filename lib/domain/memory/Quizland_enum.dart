@@ -1,0 +1,4 @@
+enum QuizlandEnum {
+  none,
+  harryPotter,
+}
