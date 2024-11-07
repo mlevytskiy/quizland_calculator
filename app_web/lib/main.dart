@@ -1,7 +1,6 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:core/core.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:just_audio_background/just_audio_background.dart';
@@ -20,7 +19,7 @@ void main() async {
     androidNotificationChannelName: 'Audio playback',
     androidNotificationOngoing: true,
   );
-  runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => const App()));
+  runApp(DevicePreview(enabled: true, builder: (context) => const App()));
 }
 
 class App extends StatelessWidget {
