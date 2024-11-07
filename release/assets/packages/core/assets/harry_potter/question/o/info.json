@@ -1,0 +1,25 @@
+{
+  "hard_level": "3",
+  "type": "video",
+  "context": {
+    "video": {
+      "video_file": "assets/harry_potter/question/o/harry_potter_video.mp4",
+      "pause_time": 17100,
+      "header_text": "Guess, what will be next",
+      "options": [
+        {"is_right":  true,
+        "text":  "Drago:\nI can help you\nthere"
+        },
+        {"is_right":  false,
+          "text":  "Drago:\nbe my friend"
+        },
+        {"is_right":  false,
+          "text":  "Drago:\nI can kill you\nthere"
+        },
+        {"is_right":  false,
+          "text":  "Drago: Bye\nbut remember\nI'm onto you,\nfriend"
+        }
+      ]
+    }
+  }
+}
