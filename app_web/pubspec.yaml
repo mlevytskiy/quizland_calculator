@@ -1,0 +1,45 @@
+name: app_mobile
+description: "mobile version of magic calculator"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  core:
+    path: ../library/core
+  repository:
+    path: ../library/repository
+  repository_web:
+    path: ../library/repository_web
+  device_preview: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  change_app_package_name: ^1.4.0
+  flutter_lints: ^3.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/harry_potter/
+    - assets/harry_potter/question/
+    - assets/harry_potter/question/a/
+    - assets/harry_potter/question/o/
+    - assets/harry_potter/question/q/
+    - assets/harry_potter/question/u/
+  fonts:
+    - family: Harry
+      fonts:
+        - asset: assets/harry_potter.ttf

@@ -1,0 +1,20 @@
+name: repository_mobile
+description: repository implementation for mobile app
+version: 1.0.1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+  path_provider: ^2.0.15
+  repository:
+    path: ../repository
+
+dev_dependencies:
+  isar_generator: ^3.1.0+1
+  flutter_test:
+    sdk: flutter

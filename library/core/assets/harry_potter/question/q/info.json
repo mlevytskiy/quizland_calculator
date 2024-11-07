@@ -1,0 +1,25 @@
+{
+  "hard_level": "3",
+  "type": "video",
+  "context": {
+    "video": {
+      "video_file": "assets/harry_potter/question/q/harry_potter_video.mp4",
+      "pause_time": 13100,
+      "header_text": "Guess, what will be next",
+      "options": [
+        {"is_right":  false,
+        "text":  "I'll\nremember that"
+        },
+        {"is_right":  false,
+          "text":  "I'll be back"
+        },
+        {"is_right":  true,
+          "text":  "Clearly,\nHermione knows"
+        },
+        {"is_right":  false,
+          "text":  "It's true.\nThat why I\nhate you"
+        }
+      ]
+    }
+  }
+}

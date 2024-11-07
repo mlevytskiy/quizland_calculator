@@ -1,0 +1,17 @@
+name: repository_web
+description: repository implementation for web app
+version: 1.0.1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_provider: ^2.0.15
+  repository:
+    path: ../repository
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

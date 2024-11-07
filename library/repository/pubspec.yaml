@@ -1,0 +1,14 @@
+name: repository
+description: Abstract repository level (because the implementation can be different for different plutforms)
+version: 1.0.1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
