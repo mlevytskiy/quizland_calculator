@@ -3,7 +3,7 @@
   "type": "text",
   "context": {
     "text": {
-      "image_file": "assets/harry_potter/question/b/1.jpg",
+      "image_file": "packages/core/assets/harry_potter/question/b/1.jpg",
       "question_text": "How many siblings does Ron have?",
       "options": [
         {"is_right":  false,

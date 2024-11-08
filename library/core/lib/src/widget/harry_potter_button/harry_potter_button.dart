@@ -1,4 +1,5 @@
 import 'package:conditional_wrap/conditional_wrap.dart';
+import 'package:core/const/resource.dart';
 import 'package:core/src/app/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
@@ -261,14 +262,14 @@ class _HarryPotterButtonState extends State<HarryPotterButton> {
                       curve: Curves.bounceIn,
                       width: widget.state.lightningWidth,
                       height: widget.state.lightningHeight,
-                      child: const Image(image: AssetImage('assets/lightning.png'))))
+                      child: const Image(image: AssetImage(R.ASSETS_LIGHTNING_PNG, package: "core"))))
               .applyConstraintId(id: cId(tagLightning)),
           AnimatedContainer(
                   duration: const Duration(seconds: 1),
                   curve: Curves.bounceIn,
                   width: widget.state.eyesGlassesWidth,
                   height: widget.state.eyesGlassesHeight,
-                  child: const Image(image: AssetImage('assets/eyesglasses.png')))
+                  child: const Image(image: AssetImage(R.ASSETS_EYESGLASSES_PNG, package: "core")))
               .applyConstraintId(id: cId(tagEyesGlasses)),
           if (widget.state.showHeaderTextMessage)
             const SizedBox(
@@ -283,12 +284,15 @@ class _HarryPotterButtonState extends State<HarryPotterButton> {
                       color: Colors.amber,
                       decoration: null,
                       fontWeight: FontWeight.normal,
-                      fontFamily: "Harry"),
+                      fontFamily: "Harry",
+                      package: "core"),
                 )).applyConstraintId(id: cId(tagHogwards)),
           if (widget.state.showExam)
-            Container(child: const Image(image: AssetImage('assets/cross.png'))).applyConstraintId(id: cId("cross")),
+            Container(child: const Image(image: AssetImage(R.ASSETS_CROSS_PNG, package: "core")))
+                .applyConstraintId(id: cId("cross")),
           if (widget.state.showExam)
-            Container(child: const Image(image: AssetImage('assets/exam.png'))).applyConstraintId(id: cId("exam")),
+            Container(child: const Image(image: AssetImage(R.ASSETS_EXAM_PNG, package: "core")))
+                .applyConstraintId(id: cId("exam")),
         ],
       ),
     );

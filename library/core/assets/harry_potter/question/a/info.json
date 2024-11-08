@@ -3,7 +3,7 @@
   "type": "video",
   "context": {
     "video": {
-      "video_file": "assets/harry_potter/question/a/harry_potter_video.mp4",
+      "video_file": "packages/core/assets/harry_potter/question/a/harry_potter_video.mp4",
       "pause_time": 11100,
       "header_text": "Guess, what will be next",
       "options": [

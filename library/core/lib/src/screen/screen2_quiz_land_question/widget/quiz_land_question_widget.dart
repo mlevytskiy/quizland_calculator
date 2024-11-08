@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:conditional_wrap/conditional_wrap.dart';
+import 'package:core/const/resource.dart';
 import 'package:core/src/app/app.locator.dart';
 import 'package:core/src/app/data/question.dart';
 import 'package:core/src/app/utils.dart';
@@ -118,7 +119,8 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
                         child: Container(
                           decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white24),
                           child: Image.asset(
-                            'assets/harry_potter/hat.png',
+                            R.ASSETS_HARRY_POTTER_HAT_PNG,
+                            package: "core",
                           ),
                         ),
                       ),
@@ -201,7 +203,8 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
                             child: Container(
                               decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white24),
                               child: Image.asset(
-                                'assets/harry_potter/hat.png',
+                                R.ASSETS_HARRY_POTTER_HAT_PNG,
+                                package: "core",
                               ),
                             ),
                           ),

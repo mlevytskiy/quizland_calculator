@@ -1,4 +1,5 @@
 import 'package:conditional_wrap/conditional_wrap.dart';
+import 'package:core/const/resource.dart';
 import 'package:core/src/app/app.locator.dart';
 import 'package:core/src/screen/screen1_quiz_land/bloc/quiz_land_bloc.dart';
 import 'package:core/src/widget/grid_view_builder.dart';
@@ -125,7 +126,8 @@ class _QuizLandWidgetState extends State<QuizLandWidget> {
                 child: Container(
                   decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white24),
                   child: Image.asset(
-                    'assets/harry_potter/hat.png',
+                    R.ASSETS_HARRY_POTTER_HAT_PNG,
+                    package: "core",
                   ),
                 ),
               ),
@@ -154,7 +156,9 @@ class _QuizLandWidgetState extends State<QuizLandWidget> {
                         top: 5,
                       );
                     }))).applyConstraintId(id: ConstraintId("grid")),
-        Container(color: Colors.black, child: const Image(image: AssetImage('assets/hogwards_express.png')))
+        Container(
+                color: Colors.black,
+                child: const Image(image: AssetImage(R.ASSETS_HOGWARDS_EXPRESS_PNG, package: "core")))
             .applyConstraintId(id: cId("background")),
       ],
     );

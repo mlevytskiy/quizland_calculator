@@ -1,3 +1,4 @@
+import 'package:core/const/resource.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
@@ -58,7 +59,7 @@ class _ButtonBackgroundState extends State<ButtonBackground> {
         borderRadius: BorderRadius.circular(_get('borderRadius') ?? 0.0),
         color: _get('color') ?? Colors.green,
         image: DecorationImage(
-          image: const AssetImage("assets/hogwards_background.png"),
+          image: const AssetImage(R.ASSETS_HOGWARDS_BACKGROUND_PNG, package: "core"),
           opacity: _get('opacity') ?? 0.0,
           fit: BoxFit.fitWidth,
         ),

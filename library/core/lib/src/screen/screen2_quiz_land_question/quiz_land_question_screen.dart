@@ -32,10 +32,10 @@ class _QuizLandQuestionScreenState extends RouteAwareState<QuizLandQuestionScree
   @override
   void onEnterScreenBeforeAnimation() {
     QuizLandQuestionBloc bloc = context.read<QuizLandQuestionBloc>();
-    Di.readAssetsIsolate.decode('assets/harry_potter/question/${bloc.id}/info.json').then((question) {
+    Di.readAssetsIsolate.decode('packages/core/assets/harry_potter/question/${bloc.id}/info.json').then((question) {
       bloc.receiveQuestionInfoFromAssets(question);
     }).onError((_, __) {
-      Di.readAssetsIsolate.decode('assets/harry_potter/question/a/info.json').then((question) {
+      Di.readAssetsIsolate.decode('packages/core/assets/harry_potter/question/a/info.json').then((question) {
         bloc.receiveQuestionInfoFromAssets(question);
       });
     });

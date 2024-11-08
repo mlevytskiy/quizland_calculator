@@ -1,4 +1,5 @@
 import 'package:auto_injector/auto_injector.dart';
+import 'package:core/const/resource.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:repository/repository.dart';
@@ -34,7 +35,7 @@ class Di {
     ClippingAudioSource playList = ClippingAudioSource(
       start: const Duration(seconds: 0),
       end: const Duration(seconds: 35, milliseconds: 500),
-      child: AudioSource.asset("assets/harry_potter/background_music.mp3"),
+      child: AudioSource.asset(R.ASSETS_HARRY_POTTER_BACKGROUND_MUSIC_MP3, package: "core"),
       tag: const MediaItem(
         id: '10',
         album: "Science Friday",

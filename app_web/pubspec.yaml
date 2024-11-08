@@ -31,15 +31,3 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 flutter:
   uses-material-design: true
-  assets:
-    - assets/
-    - assets/harry_potter/
-    - assets/harry_potter/question/
-    - assets/harry_potter/question/a/
-    - assets/harry_potter/question/o/
-    - assets/harry_potter/question/q/
-    - assets/harry_potter/question/u/
-  fonts:
-    - family: Harry
-      fonts:
-        - asset: assets/harry_potter.ttf
