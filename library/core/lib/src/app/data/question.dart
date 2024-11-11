@@ -21,16 +21,18 @@ class Question extends Equatable {
 
 @JsonSerializable()
 class QuestionContext extends Equatable {
-  final QuestionVideo video;
+  final QuestionVideo? video;
+  @JsonKey(name: "simple_4_options")
+  final Simple4Options? simple4options;
 
-  const QuestionContext(this.video);
+  const QuestionContext(this.video, this.simple4options);
 
   factory QuestionContext.fromJson(Map<String, dynamic> json) => _$QuestionContextFromJson(json);
 
   Map<String, dynamic> toJson() => _$QuestionContextToJson(this);
 
   @override
-  List<Object?> get props => [video];
+  List<Object?> get props => [video, simple4options];
 }
 
 @JsonSerializable()
@@ -51,6 +53,23 @@ class QuestionVideo extends Equatable {
 
   @override
   List<Object?> get props => [videoFile, pauseTime, headerText, options];
+}
+
+@JsonSerializable()
+class Simple4Options extends Equatable {
+  @JsonKey(name: "image_file")
+  final String imageFile;
+  final String question;
+  final List<QuestionOption> options;
+
+  const Simple4Options(this.imageFile, this.question, this.options);
+
+  factory Simple4Options.fromJson(Map<String, dynamic> json) => _$Simple4OptionsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$Simple4OptionsToJson(this);
+
+  @override
+  List<Object?> get props => [imageFile, question, options];
 }
 
 @JsonSerializable()
@@ -80,5 +99,7 @@ enum HardLevel {
 
 enum QuestionType {
   @JsonValue("video")
-  video
+  video,
+  @JsonValue("simple_4_options")
+  simple4Options,
 }

@@ -26,16 +26,24 @@ const _$HardLevelEnumMap = {
 
 const _$QuestionTypeEnumMap = {
   QuestionType.video: 'video',
+  QuestionType.simple4Options: 'simple_4_options',
 };
 
 QuestionContext _$QuestionContextFromJson(Map<String, dynamic> json) =>
     QuestionContext(
-      QuestionVideo.fromJson(json['video'] as Map<String, dynamic>),
+      json['video'] == null
+          ? null
+          : QuestionVideo.fromJson(json['video'] as Map<String, dynamic>),
+      json['simple_4_options'] == null
+          ? null
+          : Simple4Options.fromJson(
+              json['simple_4_options'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$QuestionContextToJson(QuestionContext instance) =>
     <String, dynamic>{
       'video': instance.video,
+      'simple_4_options': instance.simple4options,
     };
 
 QuestionVideo _$QuestionVideoFromJson(Map<String, dynamic> json) =>
@@ -53,6 +61,22 @@ Map<String, dynamic> _$QuestionVideoToJson(QuestionVideo instance) =>
       'video_file': instance.videoFile,
       'pause_time': instance.pauseTime,
       'header_text': instance.headerText,
+      'options': instance.options,
+    };
+
+Simple4Options _$Simple4OptionsFromJson(Map<String, dynamic> json) =>
+    Simple4Options(
+      json['image_file'] as String,
+      json['question'] as String,
+      (json['options'] as List<dynamic>)
+          .map((e) => QuestionOption.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$Simple4OptionsToJson(Simple4Options instance) =>
+    <String, dynamic>{
+      'image_file': instance.imageFile,
+      'question': instance.question,
       'options': instance.options,
     };
 

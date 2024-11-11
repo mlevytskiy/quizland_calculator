@@ -254,6 +254,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_bloc_side_effect",
+      "rootUri": "file:///Users/max/.pub-cache/hosted/pub.dev/flutter_bloc_side_effect-0.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_cache_manager",
       "rootUri": "file:///Users/max/.pub-cache/hosted/pub.dev/flutter_cache_manager-3.4.1",
       "packageUri": "lib/",
@@ -443,7 +449,7 @@
       "name": "local_hero",
       "rootUri": "../../third_part_library/local_hero",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "logging",
@@ -587,7 +593,7 @@
       "name": "repository",
       "rootUri": "../../repository",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "rxdart",
@@ -842,7 +848,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-11-06T17:31:30.433701Z",
+  "generated": "2024-11-10T18:35:55.140147Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///opt/homebrew/Caskroom/flutter/2.10.3/flutter",

@@ -1,5 +1,3 @@
-import 'package:core/src/screen/screen2_quiz_land_question/quiz_land_question_param.dart';
-import 'package:core/src/screen/screen2_quiz_land_question/quiz_land_question_screen_bloc_wrapper.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:go_router_paths/go_router_paths.dart';
@@ -7,6 +5,8 @@ import 'package:repository/repository.dart';
 
 import '../screen/screen0_calculator/calculator_screen.dart';
 import '../screen/screen1_quiz_land/quiz_land_screen_bloc_wrapper.dart';
+import '../screen/screen2_quiz_land_question/quiz_land_question_param.dart';
+import '../screen/screen2_quiz_land_question/quiz_land_question_screen_bloc_wrapper.dart';
 
 // import 'app.locator.dart';
 

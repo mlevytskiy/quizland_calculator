@@ -33,6 +33,7 @@ dependencies:
   widget_circular_animator: ^1.0.0
   just_audio_background: ^0.0.1-beta.13
   just_audio: ^0.9.42
+  flutter_bloc_side_effect: ^0.0.2
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,7 @@ flutter:
     - assets/harry_potter/
     - assets/harry_potter/question/
     - assets/harry_potter/question/a/
+    - assets/harry_potter/question/b/
     - assets/harry_potter/question/o/
     - assets/harry_potter/question/q/
     - assets/harry_potter/question/u/

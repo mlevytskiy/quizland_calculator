@@ -1,10 +1,10 @@
 {
   "hard_level": "3",
-  "type": "text",
+  "type": "simple_4_options",
   "context": {
-    "text": {
-      "image_file": "packages/core/assets/harry_potter/question/b/1.jpg",
-      "question_text": "How many siblings does Ron have?",
+    "simple_4_options": {
+      "image_file": "packages/core/assets/harry_potter/question/b/ron.png",
+      "question": "How many siblings does Ron have?",
       "options": [
         {"is_right":  false,
           "text":  "8"

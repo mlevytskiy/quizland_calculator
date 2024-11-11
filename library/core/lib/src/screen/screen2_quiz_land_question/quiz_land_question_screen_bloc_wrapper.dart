@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/quiz_land_question_bloc.dart';
-import 'quiz_land_question_screen.dart';
+import 'widget/quiz_land_question_screen.dart';
 
 class QuizLandQuestionScreenBlocWrapper extends StatelessWidget {
   final QuizLandQuestionParam param;
@@ -12,9 +12,9 @@ class QuizLandQuestionScreenBlocWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (_) => QuizLandQuestionBloc(id: param.id, type: param.type),
+        create: (_) => QuizLandQuestionBloc(),
         child: QuizLandQuestionScreen(
-          parentScreenInfo: param.parentScreenInfo,
+          param: param,
         ));
   }
 }

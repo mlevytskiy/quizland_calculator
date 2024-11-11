@@ -162,6 +162,10 @@ flutter_bloc
 2.12
 file:///Users/max/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.6/
 file:///Users/max/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.6/lib/
+flutter_bloc_side_effect
+2.12
+file:///Users/max/.pub-cache/hosted/pub.dev/flutter_bloc_side_effect-0.0.2/
+file:///Users/max/.pub-cache/hosted/pub.dev/flutter_bloc_side_effect-0.0.2/lib/
 flutter_cache_manager
 3.0
 file:///Users/max/.pub-cache/hosted/pub.dev/flutter_cache_manager-3.4.1/
@@ -535,11 +539,11 @@ core
 file:///Users/max/StudioProjects/quizland_calculator_2/library/core/
 file:///Users/max/StudioProjects/quizland_calculator_2/library/core/lib/
 repository
-2.12
+3.4
 file:///Users/max/StudioProjects/quizland_calculator_2/library/repository/
 file:///Users/max/StudioProjects/quizland_calculator_2/library/repository/lib/
 local_hero
-2.12
+3.4
 file:///Users/max/StudioProjects/quizland_calculator_2/library/third_part_library/local_hero/
 file:///Users/max/StudioProjects/quizland_calculator_2/library/third_part_library/local_hero/lib/
 sky_engine

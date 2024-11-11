@@ -1,26 +1,24 @@
-enum QuizLandQuestionState {
-  blank(heroState: HeroState.heroEnable, headerBackgroundOpacity: 0.8),
-  localHeroMode(headerBackgroundOpacity: 0.8),
-  video(showVideoPlayer: true),
-  videoPickOption(showVideoPlayer: true),
-  resumeVideo(showVideoPlayer: true),
-  showIsAnswerCorrectOrNot(showVideoPlayer: true),
-  goBackWithHeroAnimation(showVideoPlayer: true, heroState: HeroState.heroEnable);
+// enum QuizLandQuestionState { blank, video, simple4Options }
 
-  final HeroState heroState;
-  final double headerBackgroundOpacity;
-  final bool showVideoPlayer;
+import 'package:core/src/app/data/question.dart';
 
-  const QuizLandQuestionState(
-      {this.heroState = HeroState.localHeroEnable, this.headerBackgroundOpacity = 0.3, this.showVideoPlayer = false});
+sealed class QuizLandQuestionState {}
+
+class BlankQuizLandQuestionState extends QuizLandQuestionState {
+  final BlankTypeEnum type;
+  BlankQuizLandQuestionState(this.type);
 }
 
-enum HeroState {
-  heroEnable(true, false),
-  localHeroEnable(false, true);
+class VideoQuizLandQuestionState extends QuizLandQuestionState {
+  final QuestionVideo video;
+  QuestionOption? pickedOption;
 
-  final bool isHeroEnable;
-  final bool isLocalHeroEnable;
+  VideoQuizLandQuestionState({required this.video, this.pickedOption});
+}
 
-  const HeroState(this.isHeroEnable, this.isLocalHeroEnable);
+class Simple4OptionsQuizLandQuestionState extends QuizLandQuestionState {}
+
+enum BlankTypeEnum {
+  general,
+  video;
 }

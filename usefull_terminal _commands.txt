@@ -1,0 +1,13 @@
+---///  Build json generated files   ///---
+flutter packages pub run build_runner build --delete-conflicting-outputs
+
+---/// How to generate constants from assets ///---
+In library 'core' I can use 'fgen' command generate R class from assets
+
+---/// How to publish(host) web version on github ///---
+cd app_web;
+flutter build web --release --base-href=/quizland_calculator/
+//git commit here (usually I do it via android studio)
+cd ..
+git subtree split -P release -b web_release
+git push --all origin;
