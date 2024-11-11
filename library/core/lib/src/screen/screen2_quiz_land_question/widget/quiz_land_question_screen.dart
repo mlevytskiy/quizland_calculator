@@ -19,7 +19,9 @@ class QuizLandQuestionScreen extends StatefulWidget {
 class _QuizLandQuestionScreenState extends RouteAwareState<QuizLandQuestionScreen> {
   @override
   Widget build(BuildContext context) {
-    return QuizLandQuestionWidget(param: widget.param).localHeroScope().screenContainer();
+    return QuizLandQuestionWidget(param: widget.param)
+        .localHeroScope(duration: const Duration(seconds: 1))
+        .screenContainer();
   }
 
   @override

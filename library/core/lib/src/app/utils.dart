@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
@@ -28,5 +29,11 @@ void post(FrameCallback callback) {
 extension IsVideoEnd on VideoPlayerController {
   bool isVideoEnd() {
     return (!value.isPlaying && value.position > Duration.zero && value.position.inSeconds >= value.duration.inSeconds);
+  }
+}
+
+extension RX on Random {
+  double doubleBetween(double min, double max) {
+    return (nextDouble() * (max - min) + min);
   }
 }

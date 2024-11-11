@@ -46,7 +46,7 @@ class HatWidget extends StatelessWidget {
             .text(style: hatMessageTextStyle)
             .localHero(isLocalHeroEnable, "hat_text")
             .center()
-            .padding(const EdgeInsets.only(left: 25.0, bottom: 50.0))
+            .padding(const EdgeInsets.only(left: 40.0, bottom: 50.0))
             .fillPosition(),
         Row(
           children: [

@@ -11,12 +11,15 @@ class BlankQuizLandQuestionState extends QuizLandQuestionState {
 
 class VideoQuizLandQuestionState extends QuizLandQuestionState {
   final QuestionVideo video;
-  QuestionOption? pickedOption;
 
-  VideoQuizLandQuestionState({required this.video, this.pickedOption});
+  VideoQuizLandQuestionState({required this.video});
 }
 
-class Simple4OptionsQuizLandQuestionState extends QuizLandQuestionState {}
+class Simple4OptionsQuizLandQuestionState extends QuizLandQuestionState {
+  final Simple4Options simple4Options;
+
+  Simple4OptionsQuizLandQuestionState({required this.simple4Options});
+}
 
 enum BlankTypeEnum {
   general,

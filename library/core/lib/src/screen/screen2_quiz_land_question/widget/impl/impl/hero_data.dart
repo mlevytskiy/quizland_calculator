@@ -13,6 +13,10 @@ class HeroData {
         localHeroTag: tag,
         heroTag2ForText: heroTag2ForText);
   }
+
+  factory HeroData.createHat(bool isLocalHeroEnable, String id) {
+    return HeroData.create(isLocalHeroEnable, tag: "hat", heroTag2ForText: id);
+  }
 }
 
 enum HeroMode {

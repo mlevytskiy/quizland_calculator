@@ -28,40 +28,45 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
     return BlocConsumerWithSideEffects<QuizLandQuestionBloc, QuizLandQuestionState, QuizLandQuestionSideEffect>(
         bloc: context.read<QuizLandQuestionBloc>(),
         sideEffectsListener: (context, sideEffect) {
-          on<EnableLocalHeroModeSideEffect>(sideEffect, () {
+          on<EnableLocalHeroModeSideEffect>(sideEffect, (_) {
             setState(() {
               isLocalHeroEnable = true;
             });
           });
-          on<CloseScreenSideEffect>(sideEffect, () async {
+          on<CloseScreenSideEffect>(sideEffect, (sideEffect) async {
             setState(() {
               isLocalHeroEnable = false;
             });
             await wait(milliseconds: 50);
-            bool isCorrect = (sideEffect as CloseScreenSideEffect).isAnswerCorrect;
-            Di.routeMediator.goBack(isCorrect);
+            Di.routeMediator.goBack(sideEffect.isAnswerCorrect);
           });
         },
         listener: (context, state) {},
         builder: (context, state) {
+          Color color = container.color ?? Colors.transparent;
+          HeroData heroData = HeroData.createHat(isLocalHeroEnable, widget.param.id);
           return switch (state) {
             BlankQuizLandQuestionState _ => BlankWidget(
-                textBackgroundColor: container.color!,
-                heroData: HeroData.create(isLocalHeroEnable, tag: "hat", heroTag2ForText: widget.param.id),
+                textBackgroundColor: color,
+                heroData: heroData,
               ),
-            VideoQuizLandQuestionState state => VideoWidget(
+            VideoQuizLandQuestionState state =>
+              VideoWidget(blocState: state, textBackgroundColor: color, heroData: heroData),
+            Simple4OptionsQuizLandQuestionState state => Simple4OptionsWidget(
                 blocState: state,
-                textBackgroundColor: container.color!,
-                heroData: HeroData.create(isLocalHeroEnable, tag: "hat", heroTag2ForText: widget.param.id)),
-            Simple4OptionsQuizLandQuestionState _ => const Simple4OptionsWidget(),
+                textBackgroundColor: color,
+                heroData: heroData,
+              ),
             // _ => const BlankWidget(questionId: "a");
           };
         });
   }
 
-  void on<T extends QuizLandQuestionSideEffect>(QuizLandQuestionSideEffect sideEffect, VoidCallback callback) {
+  void on<T extends QuizLandQuestionSideEffect>(QuizLandQuestionSideEffect sideEffect, SideEffectCallback<T> callback) {
     if (sideEffect is T) {
-      callback();
+      callback(sideEffect);
     }
   }
 }
+
+typedef SideEffectCallback<T extends QuizLandQuestionSideEffect> = void Function(T sideEffect);

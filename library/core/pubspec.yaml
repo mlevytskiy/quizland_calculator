@@ -52,6 +52,7 @@ flutter:
     - assets/harry_potter/question/
     - assets/harry_potter/question/a/
     - assets/harry_potter/question/b/
+    - assets/harry_potter/question/c/
     - assets/harry_potter/question/o/
     - assets/harry_potter/question/q/
     - assets/harry_potter/question/u/

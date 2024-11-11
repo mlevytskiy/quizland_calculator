@@ -7,4 +7,5 @@ export 'sizing.dart';
 export 'text.dart';
 export 'theming.dart';
 export 'transform.dart';
+export 'user_action.dart';
 export 'visibility.dart';

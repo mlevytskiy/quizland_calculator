@@ -1,6 +1,10 @@
+import 'dart:math';
+
 import 'package:conditional_wrap/conditional_wrap.dart';
+import 'package:core/src/app/utils.dart';
 import 'package:core/src/widget/screen_container.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:local_hero/local_hero.dart';
 
 extension PositioningExtension on Widget {
@@ -33,6 +37,24 @@ extension PositioningExtension on Widget {
         heightFactor: heightFactor,
         child: this,
       );
+
+  Widget random({double minX = 0.1, double maxX = 0.9, double minY = 0.1, double maxY = 0.9}) {
+    var random = Random();
+    double x = random.doubleBetween(minX, maxX);
+    double y = random.doubleBetween(minY, maxY);
+    return ConstraintLayout(
+      children: [
+        applyConstraint(
+          top: parent.top,
+          bottom: parent.bottom,
+          right: parent.right,
+          left: parent.left,
+          verticalBias: y,
+          horizontalBias: x,
+        )
+      ],
+    );
+  }
 
   /// Wraps this widget with a [Positioned] widget.
   Widget position({

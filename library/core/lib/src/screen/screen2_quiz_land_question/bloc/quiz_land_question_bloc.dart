@@ -10,8 +10,8 @@ class QuizLandQuestionBloc
   final Semaphore _semaphore = Semaphore<QuizLandQuestionState, Question>((emit, data) {
     QuizLandQuestionState state = switch (data?.type) {
       QuestionType.video => VideoQuizLandQuestionState(video: data!.context.video!),
-      QuestionType.simple4Options => Simple4OptionsQuizLandQuestionState(),
-      _ => Simple4OptionsQuizLandQuestionState(),
+      QuestionType.simple4Options => Simple4OptionsQuizLandQuestionState(simple4Options: data!.context.simple4options!),
+      _ => Simple4OptionsQuizLandQuestionState(simple4Options: const Simple4Options("", "", [])),
     };
     emit(state);
   });

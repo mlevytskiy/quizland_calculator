@@ -28,6 +28,7 @@ class _VideoWidgetState extends State<VideoWidget> {
   late QuestionVideo _video;
   final ValueNotifier<bool> _isControllerInit = ValueNotifier(false);
   QuestionOption? pickedOption;
+  bool _isStartLocalHeroAnimation = false;
 
   @override
   void dispose() {
@@ -99,9 +100,10 @@ class _VideoWidgetState extends State<VideoWidget> {
               playTime: _video.pauseTime,
               options: _video.options,
               isLocalHeroEnable: true,
-              isStartLocalHeroAnimation: false,
+              isStartLocalHeroAnimation: _isStartLocalHeroAnimation,
               onPick: (option) {
                 setState(() {
+                  _isStartLocalHeroAnimation = true;
                   pickedOption = option;
                 });
               },
