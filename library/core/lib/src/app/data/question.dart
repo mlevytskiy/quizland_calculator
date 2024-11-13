@@ -59,10 +59,11 @@ class QuestionVideo extends Equatable {
 class Simple4Options extends Equatable {
   @JsonKey(name: "image_file")
   final String imageFile;
+  final Simple4OptionSubtype subtype;
   final String question;
   final List<QuestionOption> options;
 
-  const Simple4Options(this.imageFile, this.question, this.options);
+  const Simple4Options(this.imageFile, this.question, this.options, this.subtype);
 
   factory Simple4Options.fromJson(Map<String, dynamic> json) => _$Simple4OptionsFromJson(json);
 
@@ -73,19 +74,44 @@ class Simple4Options extends Equatable {
 }
 
 @JsonSerializable()
+class OptionOverrideColors {
+  final String? color;
+  String? normalColor;
+  String? selectedColor;
+  final String? disabledColor;
+  String? correctAnswerColor;
+  String? wrongAnswerColor;
+  OptionOverrideColors(this.color, this.normalColor, this.selectedColor, this.disabledColor, this.correctAnswerColor,
+      this.wrongAnswerColor) {
+    normalColor = normalColor ?? color;
+    selectedColor = selectedColor ?? color;
+    correctAnswerColor = correctAnswerColor ?? color;
+    wrongAnswerColor = wrongAnswerColor ?? color;
+  }
+
+  factory OptionOverrideColors.fromJson(Map<String, dynamic> json) => _$OptionOverrideColorsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$OptionOverrideColorsToJson(this);
+}
+
+@JsonSerializable()
 class QuestionOption extends Equatable {
   @JsonKey(name: "is_right")
   final bool isRight;
-  final String text;
+  final String? text;
+  @JsonKey(name: "image_file")
+  final String? imageFile;
 
-  const QuestionOption(this.isRight, this.text);
+  final OptionOverrideColors? colors;
+
+  const QuestionOption(this.isRight, this.text, this.imageFile, this.colors);
 
   factory QuestionOption.fromJson(Map<String, dynamic> json) => _$QuestionOptionFromJson(json);
 
   Map<String, dynamic> toJson() => _$QuestionOptionToJson(this);
 
   @override
-  List<Object?> get props => [text];
+  List<Object?> get props => [text, imageFile];
 }
 
 enum HardLevel {
@@ -102,4 +128,15 @@ enum QuestionType {
   video,
   @JsonValue("simple_4_options")
   simple4Options,
+}
+
+enum Simple4OptionSubtype {
+  @JsonValue("numbers_in_options")
+  numbersInOptions,
+  @JsonValue("personages_in_options")
+  personagesInOptions,
+  @JsonValue("text_in_options")
+  textInOptions,
+  @JsonValue("pick_house")
+  pickHouse;
 }

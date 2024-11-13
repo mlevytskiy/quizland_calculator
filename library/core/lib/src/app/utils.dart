@@ -37,3 +37,16 @@ extension RX on Random {
     return (nextDouble() * (max - min) + min);
   }
 }
+
+extension IntToColor on int {
+  Color intToColor() {
+    return Color(this);
+  }
+}
+
+extension StrToColor on String {
+  //format string: 'FFFF0000'
+  Color toColor() {
+    return Color(int.parse(this, radix: 16));
+  }
+}

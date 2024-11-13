@@ -3,20 +3,25 @@
   "type": "simple_4_options",
   "context": {
     "simple_4_options": {
+      "subtype": "personages_in_options",
       "image_file": "packages/core/assets/harry_potter/question/c/sirius_black.jpg",
       "question": "Who killed Sirius Black?",
       "options": [
         {"is_right":  false,
-          "text":  "Voldmort"
+          "text":  "Voldemort",
+          "image_file": "packages/core/assets/harry_potter/question/c/voldemort.jpeg"
         },
         {"is_right":  true,
-          "text":  "Bellatrix\nLestrange"
+          "text":  "Bellatrix Lestrange",
+          "image_file": "packages/core/assets/harry_potter/question/c/bellatrix.jpeg"
         },
         {"is_right":  false,
-          "text":  "Lucrus Malfoy"
+          "text":  "Lucius Malfoy",
+          "image_file": "packages/core/assets/harry_potter/question/c/lucius.jpg"
         },
         {"is_right":  false,
-          "text":  "Fenrir Greyback"
+          "text":  "Fenrir Greyback",
+          "image_file": "packages/core/assets/harry_potter/question/c/fenrir.jpg"
         }
       ]
     }

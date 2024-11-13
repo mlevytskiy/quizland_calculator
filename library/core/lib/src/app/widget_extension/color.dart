@@ -13,4 +13,12 @@ extension ColorExtension on Color {
       child: child,
     );
   }
+
+  Widget circleOrContainer({Border? border, Widget? child, required bool isCircle}) {
+    if (isCircle) {
+      return circle(border: border, child: child);
+    } else {
+      return container(child: child);
+    }
+  }
 }

@@ -2,6 +2,7 @@ part of 'simple_4_options_widget.dart';
 
 class Style {
   static const TextStyle optionText = TextStyle(fontSize: 40, color: Colors.white);
+  static const TextStyle optionSmallText = TextStyle(fontSize: 20, color: Colors.white);
 }
 
 class ConstColors {

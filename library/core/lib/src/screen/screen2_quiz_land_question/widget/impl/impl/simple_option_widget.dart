@@ -16,7 +16,7 @@ enum SimpleCircleOptionState {
   const SimpleCircleOptionState({this.isSelected = false});
 }
 
-class SimpleCircleOption extends StatefulWidget {
+class SimpleOptionWidget extends StatefulWidget {
   final Color color;
   final Color selectedColor;
   final Color disabledColor;
@@ -26,8 +26,11 @@ class SimpleCircleOption extends StatefulWidget {
   final TextStyle style;
   final VoidCallback onClick;
   final SimpleCircleOptionState state;
+  final bool isCircle;
+  final String? imageFile;
+  final bool useOnlyImageWithoutText;
 
-  const SimpleCircleOption({
+  const SimpleOptionWidget({
     super.key,
     required this.color,
     required this.selectedColor,
@@ -38,25 +41,39 @@ class SimpleCircleOption extends StatefulWidget {
     this.state = SimpleCircleOptionState.clickable,
     this.correctAnswerColor = Colors.green,
     this.wrongAnswerColor = Colors.red,
+    this.useOnlyImageWithoutText = false,
+    required this.isCircle,
+    this.imageFile,
   });
 
   @override
-  State<SimpleCircleOption> createState() => _SimpleCircleOptionState();
+  State<SimpleOptionWidget> createState() => _SimpleOptionWidgetState();
 }
 
-class _SimpleCircleOptionState extends State<SimpleCircleOption> {
+class _SimpleOptionWidgetState extends State<SimpleOptionWidget> {
   Timer? _timer;
   late Color background;
   bool _stopChangeBackground = false;
 
   @override
   Widget build(BuildContext context) {
+    bool hideText = widget.useOnlyImageWithoutText;
+    bool circleAvatar = !widget.useOnlyImageWithoutText;
     return background
-        .circle(
+        .circleOrContainer(
             child: Text(
-      widget.text,
-      style: widget.style,
-    ).center())
+              widget.text,
+              style: widget.style,
+              textAlign: TextAlign.center,
+            )
+                .withImage(
+                  widget.imageFile,
+                  circleAvatar: circleAvatar,
+                  avatarBackground: background.withAlpha(100),
+                  hideText: hideText,
+                )
+                .center(),
+            isCircle: widget.isCircle)
         .onClick(() {
       if (SimpleCircleOptionState.clickable == widget.state) {
         widget.onClick();
@@ -84,7 +101,7 @@ class _SimpleCircleOptionState extends State<SimpleCircleOption> {
   }
 
   @override
-  void didUpdateWidget(SimpleCircleOption oldWidget) {
+  void didUpdateWidget(SimpleOptionWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (_stopChangeBackground) {
       return;

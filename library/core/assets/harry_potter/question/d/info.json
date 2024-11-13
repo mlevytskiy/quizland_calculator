@@ -4,20 +4,20 @@
   "context": {
     "simple_4_options": {
       "subtype": "numbers_in_options",
-      "image_file": "packages/core/assets/harry_potter/question/b/ron.png",
-      "question": "How many siblings does Ron have?",
+      "image_file": "packages/core/assets/harry_potter/question/d/quidditch.png",
+      "question": "How many fouls can be commited in Quidditch?",
       "options": [
         {"is_right": false,
-          "text":  "1"
+          "text":  "2"
         },
         {"is_right": true,
-          "text":  "6"
+          "text":  "700"
         },
         {"is_right": false,
-          "text":  "4"
+          "text":  "20"
         },
         {"is_right": false,
-          "text":  "8"
+          "text":  "60"
         }
       ]
     }

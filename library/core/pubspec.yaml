@@ -53,9 +53,14 @@ flutter:
     - assets/harry_potter/question/a/
     - assets/harry_potter/question/b/
     - assets/harry_potter/question/c/
+    - assets/harry_potter/question/d/
+    - assets/harry_potter/question/e/
+    - assets/harry_potter/question/f/
+    - assets/harry_potter/question/i/
     - assets/harry_potter/question/o/
     - assets/harry_potter/question/q/
     - assets/harry_potter/question/u/
+    - assets/harry_potter/house/
   fonts:
     - family: Harry
       fonts:

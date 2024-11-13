@@ -11,7 +11,8 @@ class QuizLandQuestionBloc
     QuizLandQuestionState state = switch (data?.type) {
       QuestionType.video => VideoQuizLandQuestionState(video: data!.context.video!),
       QuestionType.simple4Options => Simple4OptionsQuizLandQuestionState(simple4Options: data!.context.simple4options!),
-      _ => Simple4OptionsQuizLandQuestionState(simple4Options: const Simple4Options("", "", [])),
+      _ => Simple4OptionsQuizLandQuestionState(
+          simple4Options: const Simple4Options("", "", [], Simple4OptionSubtype.textInOptions)),
     };
     emit(state);
   });

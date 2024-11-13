@@ -24,7 +24,7 @@ class _QuestionWithOptionsWidgetState extends State<QuestionWithOptionsWidget> {
   int pickedOption = -1;
   @override
   Widget build(BuildContext context) {
-    List<String> options = widget.options.map((element) => element.text).toList();
+    List<String> options = widget.options.map((element) => element.text ?? "").toList();
     return Column(
       children: [
         Flexible(

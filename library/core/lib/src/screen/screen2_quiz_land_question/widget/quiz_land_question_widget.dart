@@ -1,4 +1,5 @@
 import 'package:core/src/app/app.locator.dart';
+import 'package:core/src/app/data/question.dart';
 import 'package:core/src/app/utils.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/blank_widget.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/simple_4_options_widget.dart';
@@ -56,6 +57,7 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
                 blocState: state,
                 textBackgroundColor: color,
                 heroData: heroData,
+                configuration: buildConfiguration(state),
               ),
             // _ => const BlankWidget(questionId: "a");
           };
@@ -66,6 +68,16 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
     if (sideEffect is T) {
       callback(sideEffect);
     }
+  }
+
+  Simple4OptionsWidgetConfiguration buildConfiguration(Simple4OptionsQuizLandQuestionState state) {
+    Simple4OptionsWidgetEnum widgetEnum = switch (state.simple4Options.subtype) {
+      Simple4OptionSubtype.textInOptions => Simple4OptionsWidgetEnum.textInOptions,
+      Simple4OptionSubtype.numbersInOptions => Simple4OptionsWidgetEnum.numbersInOptions,
+      Simple4OptionSubtype.personagesInOptions => Simple4OptionsWidgetEnum.personagesInOptions,
+      Simple4OptionSubtype.pickHouse => Simple4OptionsWidgetEnum.pickHouse,
+    };
+    return Simple4OptionsWidgetConfiguration(widgetEnum);
   }
 }
 

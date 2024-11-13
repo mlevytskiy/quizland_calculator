@@ -1,0 +1,37 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "pick_house",
+      "image_file": "packages/core/assets/harry_potter/question/e/nymphadora.jpg",
+      "question": "What house was Nymphadora Tonks sorter into?",
+      "options": [
+        {"is_right": false,
+          "image_file": "packages/core/assets/harry_potter/house/gryffindor.png",
+          "colors" : {
+            "color": "ff7f0909"
+          }
+        },
+        {"is_right": true,
+          "image_file": "packages/core/assets/harry_potter/house/hufflepuff.png",
+          "colors" : {
+            "color": "ffecbf16"
+          }
+        },
+        {"is_right": false,
+          "image_file": "packages/core/assets/harry_potter/house/ravenclaw.png",
+          "colors" : {
+            "color": "ff024d7d"
+          }
+        },
+        {"is_right": false,
+          "image_file": "packages/core/assets/harry_potter/house/slytherin.png",
+          "colors" : {
+            "color": "ff285c49"
+          }
+        }
+      ]
+    }
+  }
+}
