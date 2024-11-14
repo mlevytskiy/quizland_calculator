@@ -1,5 +1,9 @@
+import 'package:core/src/app/data/impl/pick_multiple_personages.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'impl/question_video.dart';
+import 'impl/simple_4_options.dart';
 
 part 'question.g.dart';
 
@@ -24,8 +28,10 @@ class QuestionContext extends Equatable {
   final QuestionVideo? video;
   @JsonKey(name: "simple_4_options")
   final Simple4Options? simple4options;
+  @JsonKey(name: "pick_multiple_personages")
+  final PickMultiplePersonages? pickMultiplePersonages;
 
-  const QuestionContext(this.video, this.simple4options);
+  const QuestionContext(this.video, this.simple4options, this.pickMultiplePersonages);
 
   factory QuestionContext.fromJson(Map<String, dynamic> json) => _$QuestionContextFromJson(json);
 
@@ -33,85 +39,6 @@ class QuestionContext extends Equatable {
 
   @override
   List<Object?> get props => [video, simple4options];
-}
-
-@JsonSerializable()
-class QuestionVideo extends Equatable {
-  @JsonKey(name: "video_file")
-  final String videoFile;
-  @JsonKey(name: "pause_time")
-  final int pauseTime;
-  @JsonKey(name: "header_text")
-  final String headerText;
-  final List<QuestionOption> options;
-
-  const QuestionVideo(this.videoFile, this.pauseTime, this.headerText, this.options);
-
-  factory QuestionVideo.fromJson(Map<String, dynamic> json) => _$QuestionVideoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$QuestionVideoToJson(this);
-
-  @override
-  List<Object?> get props => [videoFile, pauseTime, headerText, options];
-}
-
-@JsonSerializable()
-class Simple4Options extends Equatable {
-  @JsonKey(name: "image_file")
-  final String imageFile;
-  final Simple4OptionSubtype subtype;
-  final String question;
-  final List<QuestionOption> options;
-
-  const Simple4Options(this.imageFile, this.question, this.options, this.subtype);
-
-  factory Simple4Options.fromJson(Map<String, dynamic> json) => _$Simple4OptionsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$Simple4OptionsToJson(this);
-
-  @override
-  List<Object?> get props => [imageFile, question, options];
-}
-
-@JsonSerializable()
-class OptionOverrideColors {
-  final String? color;
-  String? normalColor;
-  String? selectedColor;
-  final String? disabledColor;
-  String? correctAnswerColor;
-  String? wrongAnswerColor;
-  OptionOverrideColors(this.color, this.normalColor, this.selectedColor, this.disabledColor, this.correctAnswerColor,
-      this.wrongAnswerColor) {
-    normalColor = normalColor ?? color;
-    selectedColor = selectedColor ?? color;
-    correctAnswerColor = correctAnswerColor ?? color;
-    wrongAnswerColor = wrongAnswerColor ?? color;
-  }
-
-  factory OptionOverrideColors.fromJson(Map<String, dynamic> json) => _$OptionOverrideColorsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$OptionOverrideColorsToJson(this);
-}
-
-@JsonSerializable()
-class QuestionOption extends Equatable {
-  @JsonKey(name: "is_right")
-  final bool isRight;
-  final String? text;
-  @JsonKey(name: "image_file")
-  final String? imageFile;
-
-  final OptionOverrideColors? colors;
-
-  const QuestionOption(this.isRight, this.text, this.imageFile, this.colors);
-
-  factory QuestionOption.fromJson(Map<String, dynamic> json) => _$QuestionOptionFromJson(json);
-
-  Map<String, dynamic> toJson() => _$QuestionOptionToJson(this);
-
-  @override
-  List<Object?> get props => [text, imageFile];
 }
 
 enum HardLevel {
@@ -128,15 +55,6 @@ enum QuestionType {
   video,
   @JsonValue("simple_4_options")
   simple4Options,
-}
-
-enum Simple4OptionSubtype {
-  @JsonValue("numbers_in_options")
-  numbersInOptions,
-  @JsonValue("personages_in_options")
-  personagesInOptions,
-  @JsonValue("text_in_options")
-  textInOptions,
-  @JsonValue("pick_house")
-  pickHouse;
+  @JsonValue("pick_multiple_personages")
+  pickMultiplePersonages,
 }

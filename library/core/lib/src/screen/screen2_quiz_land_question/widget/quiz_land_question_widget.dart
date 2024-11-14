@@ -1,5 +1,5 @@
 import 'package:core/src/app/app.locator.dart';
-import 'package:core/src/app/data/question.dart';
+import 'package:core/src/app/data/impl/simple_4_options.dart';
 import 'package:core/src/app/utils.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/blank_widget.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/simple_4_options_widget.dart';
@@ -10,6 +10,7 @@ import 'package:flutter_bloc_side_effect/flutter_bloc_side_effect.dart';
 import '../bloc/bloc.dart';
 import '../quiz_land_question_param.dart';
 import 'impl/impl/hero_data.dart';
+import 'impl/pick_multiple_personages_widget.dart';
 
 class QuizLandQuestionWidget extends StatefulWidget {
   final QuizLandQuestionParam param;
@@ -58,6 +59,11 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
                 textBackgroundColor: color,
                 heroData: heroData,
                 configuration: buildConfiguration(state),
+              ),
+            PickMultiplePersonagesState state => PickMultiplePersonagesWidget(
+                hatTextBackgroundColor: color,
+                blocState: state,
+                heroData: heroData,
               ),
             // _ => const BlankWidget(questionId: "a");
           };

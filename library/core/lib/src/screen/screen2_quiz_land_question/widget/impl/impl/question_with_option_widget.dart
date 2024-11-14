@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:conditional_wrap/conditional_wrap.dart';
-import 'package:core/src/app/data/question.dart';
+import 'package:core/src/app/data/impl/question_option.dart';
 import 'package:flutter/material.dart';
 import 'package:local_hero/local_hero.dart';
 

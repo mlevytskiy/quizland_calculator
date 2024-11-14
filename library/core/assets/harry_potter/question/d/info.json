@@ -10,11 +10,11 @@
         {"is_right": false,
           "text":  "2"
         },
-        {"is_right": true,
-          "text":  "700"
-        },
         {"is_right": false,
           "text":  "20"
+        },
+        {"is_right": true,
+          "text":  "700"
         },
         {"is_right": false,
           "text":  "60"

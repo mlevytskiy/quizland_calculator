@@ -1,5 +1,5 @@
 import 'package:core/core.dart';
-import 'package:core/src/app/data/question.dart';
+import 'package:core/src/app/data/impl/question_option.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/bloc/bloc.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/simple_4_options_widget.dart';
 import 'package:flutter/material.dart';

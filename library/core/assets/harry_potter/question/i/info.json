@@ -1,23 +1,36 @@
 {
   "hard_level": "3",
-  "type": "simple_4_options",
+  "type": "pick_multiple_personages",
   "context": {
-    "simple_4_options": {
-      "subtype": "text_in_options",
-      "image_file": "packages/core/assets/harry_potter/question/f/harry_wand.png",
-      "question": "What is Harry's wand made out of?",
+    "pick_multiple_personages": {
+      "image_file": "packages/core/assets/harry_potter/question/i/harry_wand.png",
+      "question": "Pick two people from Slytherin",
+      "amount_of_correct_answers": 2,
       "options": [
-        {"is_right":  true,
-          "text":  "holly wood and phoenix feathers"
+        {
+          "is_right" : true,
+          "name" : "Draco Malfoy",
+          "avatar" : "assets/harry_potter/question/i/draco.jpg"
         },
-        {"is_right":  false,
-          "text":  "dragon heartstring"
+        {
+          "is_right": false,
+          "name": "Alicia Spinnet",
+          "avatar": "assets/harry_potter/question/i/alicia.png"
         },
-        {"is_right":  false,
-          "text":  "unicorn hair"
+        {
+          "is_right": false,
+          "name": "George Weasley",
+          "avatar": "assets/harry_potter/question/i/george.png"
         },
-        {"is_right":  false,
-          "text":  "muggle heart"
+        {
+          "is_right" : true,
+          "name" : "Vincent Crabbe",
+          "avatar" : "assets/harry_potter/question/i/vincent.png"
+        },
+        {
+          "is_right": false,
+          "name": "Amanda",
+          "avatar": "assets/harry_potter/question/i/amanda.png"
         }
       ]
     }

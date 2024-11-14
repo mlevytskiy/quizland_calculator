@@ -2,8 +2,8 @@ import 'package:core/src/app/widget_extension/assets.dart';
 import 'package:flutter/material.dart';
 
 extension TextExtension on String {
-  Widget text({TextStyle? style}) {
-    return Text(this, style: style);
+  Widget text({TextStyle? style, TextAlign? textAlign}) {
+    return Text(this, style: style, textAlign: textAlign);
   }
 }
 

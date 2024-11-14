@@ -1,4 +1,4 @@
-import 'package:core/src/app/data/question.dart';
+import 'package:core/src/app/data/impl/question_option.dart';
 import 'package:core/src/app/utils.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/impl/question_with_option_widget.dart';
 import 'package:flutter/material.dart';

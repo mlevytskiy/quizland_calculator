@@ -1,3 +1,4 @@
+import 'package:core/src/app/data/impl/question_option.dart';
 import 'package:core/src/app/data/question.dart';
 
 abstract class QuizLandQuestionEvent {}
