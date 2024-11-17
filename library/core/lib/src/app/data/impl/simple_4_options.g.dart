@@ -14,6 +14,7 @@ Simple4Options _$Simple4OptionsFromJson(Map<String, dynamic> json) =>
           .map((e) => QuestionOption.fromJson(e as Map<String, dynamic>))
           .toList(),
       $enumDecode(_$Simple4OptionSubtypeEnumMap, json['subtype']),
+      (json['question_lines'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$Simple4OptionsToJson(Simple4Options instance) =>
@@ -21,6 +22,7 @@ Map<String, dynamic> _$Simple4OptionsToJson(Simple4Options instance) =>
       'image_file': instance.imageFile,
       'subtype': _$Simple4OptionSubtypeEnumMap[instance.subtype]!,
       'question': instance.question,
+      'question_lines': instance.questionLines,
       'options': instance.options,
     };
 

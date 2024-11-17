@@ -15,6 +15,8 @@ PickMultiplePersonages _$PickMultiplePersonagesFromJson(
       (json['options'] as List<dynamic>)
           .map((e) => MPOption.fromJson(e as Map<String, dynamic>))
           .toList(),
+      questionBlackBackground:
+          json['question_black_background'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$PickMultiplePersonagesToJson(
@@ -23,6 +25,7 @@ Map<String, dynamic> _$PickMultiplePersonagesToJson(
       'image_file': instance.imageFile,
       'question': instance.question,
       'amount_of_correct_answers': instance.amountOfCorrectAnswers,
+      'question_black_background': instance.questionBlackBackground,
       'options': instance.options,
     };
 

@@ -15,7 +15,7 @@ class QuizLandQuestionBloc
       QuestionType.pickMultiplePersonages =>
         PickMultiplePersonagesState(pickMultiplePersonages: data!.context.pickMultiplePersonages!),
       _ => Simple4OptionsQuizLandQuestionState(
-          simple4Options: const Simple4Options("", "", [], Simple4OptionSubtype.textInOptions)),
+          simple4Options: const Simple4Options("", "", [], Simple4OptionSubtype.textInOptions, 2)),
     };
     emit(state);
   });

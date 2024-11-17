@@ -6,6 +6,7 @@ import '../app/utils.dart';
 class GridViewBuilder {
   List<List<String>> _array = [];
   Map<String, Widget> widgetMap = <String, Widget>{".": Container(color: Colors.transparent)};
+  Map<String, Widget> widgetIdMap = <String, Widget>{};
   ItemClickListener? _itemClickListener;
   Map<String, bool?>? _quizResult;
 
@@ -28,6 +29,11 @@ class GridViewBuilder {
 
   void setQuizResult(Map<String, bool?> value) {
     _quizResult = value;
+  }
+
+  Container getContainer({String? id, String? type}) {
+    Widget result = widgetIdMap[id] ?? widgetMap[type] ?? Container();
+    return result as Container;
   }
 
   List<List<String>> _get2DArray(String str2DArray) {
@@ -54,8 +60,13 @@ class GridViewBuilder {
     return result;
   }
 
-  void addWidget(String name, Widget widget) {
-    widgetMap[name] = widget;
+  void addWidget(Widget widget, {String? type, String? id}) {
+    id?.let((id) {
+      widgetIdMap[id] = widget;
+    });
+    type?.let((type) {
+      widgetMap[type] = widget;
+    });
   }
 
   GridViewParam build() {
@@ -65,7 +76,9 @@ class GridViewBuilder {
         String item = _array[i][j];
         String? itemId = _getItemId(item);
         String type = _getItemType(item);
-        Widget itemWidget = widgetMap[type]!;
+        Widget? widgetByType = widgetMap[type];
+        Widget? widgetById = widgetIdMap[itemId];
+        Widget itemWidget = widgetById ?? widgetByType ?? Container();
         itemWidget = itemId?.let((id) => _itemClickListener?.let((listener) =>
                 ItemClickWrapper(_quizResult, id: id, type: type, listener: listener, child: itemWidget))) ??
             itemWidget;

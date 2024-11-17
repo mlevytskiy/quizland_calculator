@@ -16,6 +16,8 @@ class Di {
   static YAJsonIsolate get readAssetsIsolate => locator.get<YAJsonIsolate>();
   static AudioPlayer get audioPlayer => locator.get<AudioPlayer>();
 
+  static double get statusBarHeight => 35.0;
+
   static Future<void> initLocator() async {
     // locator.addLazySingleton<UserRepository>(MemoryUserRepository.new);
     locator.addLazySingleton<RouterMediator>(RouterMediator.new);
@@ -34,7 +36,7 @@ class Di {
   static Future<void> audioPlayerInit() async {
     ClippingAudioSource playList = ClippingAudioSource(
       start: const Duration(seconds: 0),
-      end: const Duration(seconds: 35, milliseconds: 500),
+      end: const Duration(seconds: 10, milliseconds: 500),
       child: AudioSource.asset(R.ASSETS_HARRY_POTTER_BACKGROUND_MUSIC_MP3, package: "core"),
       tag: const MediaItem(
         id: '10',
@@ -45,7 +47,7 @@ class Di {
       ),
     );
     await audioPlayer.setAudioSource(playList);
-    await audioPlayer.setLoopMode(LoopMode.one);
+    await audioPlayer.setLoopMode(LoopMode.off);
   }
 
   // static void initAppLocalization(BuildContext context) {

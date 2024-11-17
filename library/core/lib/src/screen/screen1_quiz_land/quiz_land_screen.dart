@@ -1,4 +1,3 @@
-import 'package:core/src/app/app.locator.dart';
 import 'package:core/src/app/route_aware_state.dart';
 import 'package:core/src/widget/screen_container.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,11 @@ class QuizLandScreen extends StatefulWidget {
 class _QuizLandScreenState extends RouteAwareState<QuizLandScreen> {
   @override
   Widget build(BuildContext context) {
-    return const ScreenContainer(child: QuizLandLocalHeroWrapper());
+    return const ScreenContainer(
+      hideUpArrow: true,
+      title: "",
+      child: QuizLandLocalHeroWrapper(),
+    );
   }
 
   @override
@@ -29,15 +32,15 @@ class _QuizLandScreenState extends RouteAwareState<QuizLandScreen> {
 
   @override
   void onEnterScreenBeforeAnimation() {
-    if (!Di.audioPlayer.playing) {
-      Di.audioPlayer.play();
-    }
+    // if (!Di.audioPlayer.playing) {
+    //   Di.audioPlayer.play();
+    // }
   }
 
   @override
   void onLeaveScreen() {
-    if (Di.audioPlayer.playing) {
-      Di.audioPlayer.stop();
-    }
+    // if (Di.audioPlayer.playing) {
+    //   Di.audioPlayer.stop();
+    // }
   }
 }

@@ -1,5 +1,7 @@
 import 'package:core/src/app/app.locator.dart';
+import 'package:core/src/app/data/question_extension.dart';
 import 'package:core/src/app/route_aware_state.dart';
+import 'package:core/src/app/widget_extension/assets.dart';
 import 'package:core/src/app/widget_extension/widget_extensions.dart';
 import 'package:core/src/screen/screen2_quiz_land_question/widget/quiz_land_question_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,10 @@ class _QuizLandQuestionScreenState extends RouteAwareState<QuizLandQuestionScree
   Widget build(BuildContext context) {
     return QuizLandQuestionWidget(param: widget.param)
         .localHeroScope(duration: const Duration(seconds: 1))
-        .screenContainer();
+        .screenContainer(title: "");
+    // .screenContainer(title: kIsWeb ? "" : null);
+
+    /// fixme: title: kIsWeb ? "" : null - temporary solution to have back button in web version
   }
 
   @override
@@ -34,7 +39,13 @@ class _QuizLandQuestionScreenState extends RouteAwareState<QuizLandQuestionScree
     QuizLandQuestionBloc bloc = _bloc();
     Di.readAssetsIsolate
         .decode('packages/core/assets/harry_potter/question/${widget.param.id}/info.json')
-        .then((question) {
+        .then((question) async {
+      List<String?> imagePaths = question.getImagePathsForPrecache();
+      for (int i = 0; i < imagePaths.length; i++) {
+        if (imagePaths[i] != null) {
+          await precacheImage(imagePaths[i]!.imageAsset2(), context);
+        }
+      }
       bloc.add(LoadingAssetsFinishedEvent(question));
     }).onError((_, __) {
       Di.readAssetsIsolate.decode('packages/core/assets/harry_potter/question/a/info.json').then((question) {

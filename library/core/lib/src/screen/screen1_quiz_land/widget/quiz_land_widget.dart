@@ -38,31 +38,42 @@ class _QuizLandWidgetState extends State<QuizLandWidget> {
                         .. .. 2v .. ..
                 ''')
       ..addWidget(
-          "1",
+          type: "1",
           Container(
             color: Colors.red,
           ))
       ..addWidget(
-          "2",
+          type: "2",
           Container(
             color: Colors.green,
           ))
       ..addWidget(
-          "3",
+          type: "3",
           Container(
             color: Colors.yellow,
+          ))
+      ..addWidget(
+          id: "k",
+          Container(
+            color: const Color(0xfffd8942),
+          ))
+      ..addWidget(
+          id: "v",
+          Container(
+            color: const Color(0xffc3699d),
           ));
     QuizLandBloc bloc = context.read<QuizLandBloc>();
     GridViewParam gridViewParam = (builder
           ..setQuizResult(bloc.quizResult)
           ..setItemClickListener((id, type) async {
-            bool? result = await Di.routeMediator.goQuestionForResult(id, type, builder.widgetMap);
+            bool? result =
+                await Di.routeMediator.goQuestionForResult(id, type, builder.getContainer(id: id, type: type));
             setState(() {
               bloc.quizResult[id] = result;
-              if (!Di.audioPlayer.playing) {
-                Di.audioPlayer.setVolume(0.02);
-                Di.audioPlayer.play();
-              }
+              // if (!Di.audioPlayer.playing) {
+              //   Di.audioPlayer.setVolume(0.02);
+              //   Di.audioPlayer.play();
+              // }
               print("testr result=$result");
             });
           }))

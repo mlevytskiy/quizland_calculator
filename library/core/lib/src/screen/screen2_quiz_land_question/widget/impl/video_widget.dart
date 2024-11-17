@@ -60,28 +60,29 @@ class _VideoWidgetState extends State<VideoWidget> {
     ConstraintId footer = ConstraintId('footer');
     return ConstraintLayout(
       children: [
-        VideoScreenColors.topBackground
-            .container(
-              child: HatWidget(
-                isHeroEnable: widget.heroData.mode.isHeroEnable,
-                isLocalHeroEnable: widget.heroData.mode.isLocalHeroEnable,
-                heroTextTag: widget.heroData.heroTag2ForText,
-                heroHatTag: widget.heroData.heroTag,
-                localHeroTag: widget.heroData.localHeroTag,
-                textBackgroundOpacity: 0.3,
-                textBackgroundColor: widget.textBackgroundColor,
-                textBoxWidth: 300,
-                textBoxHeight: 50,
-                message: widget.blocState.video.headerText,
-              ).visible(pickedOption == null).center(),
-            )
-            .applyConstraint(
+        VideoScreenColors.topBackground.container().applyConstraint(
               id: header,
               width: matchParent,
               height: matchConstraint,
               top: parent.top,
               bottom: guideline1.top,
               zIndex: 10,
+            ),
+        HatWidget(
+          isHeroEnable: widget.heroData.mode.isHeroEnable,
+          isLocalHeroEnable: widget.heroData.mode.isLocalHeroEnable,
+          heroTextTag: widget.heroData.heroTag2ForText,
+          heroHatTag: widget.heroData.heroTag,
+          localHeroTag: widget.heroData.localHeroTag,
+          textBackgroundOpacity: 0.3,
+          textBackgroundColor: widget.textBackgroundColor,
+          textBoxWidth: 300,
+          textBoxHeight: 50,
+          message: widget.blocState.video.headerText,
+        ).visible(pickedOption == null).applyConstraint(
+              bottomCenterTo: header,
+              margin: const EdgeInsets.only(bottom: 15),
+              zIndex: 11,
             ),
         Guideline(
           id: guideline1,

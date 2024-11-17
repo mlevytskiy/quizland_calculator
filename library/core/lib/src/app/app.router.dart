@@ -71,14 +71,14 @@ class RouterMediator {
     _router.pop(result);
   }
 
-  void goQuestion(String id, String type, Map<String, Widget> widgetMap) {
+  void goQuestion(String id, String type, Container container) {
     _go(AppPaths.home.quizLand.quizLandQuestion.path,
-        extra: QuizLandQuestionParam(id: id, type: type, widgetMap: widgetMap));
+        extra: QuizLandQuestionParam(id: id, type: type, container: container));
   }
 
-  Future<bool?> goQuestionForResult(String id, String type, Map<String, Widget> widgetMap) {
+  Future<bool?> goQuestionForResult(String id, String type, Container container) {
     return _push<bool>(AppPaths.home.quizLand.quizLandQuestion.path,
-        extra: QuizLandQuestionParam(id: id, type: type, widgetMap: widgetMap));
+        extra: QuizLandQuestionParam(id: id, type: type, container: container));
   }
 
   void _go(String path, {Object? extra}) {

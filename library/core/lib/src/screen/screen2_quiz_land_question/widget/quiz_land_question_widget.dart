@@ -26,11 +26,12 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Container container = widget.param.parentScreenInfo.widgetMap[widget.param.type] as Container;
+    Container container = widget.param.parentScreenInfo.container;
     return BlocConsumerWithSideEffects<QuizLandQuestionBloc, QuizLandQuestionState, QuizLandQuestionSideEffect>(
         bloc: context.read<QuizLandQuestionBloc>(),
         sideEffectsListener: (context, sideEffect) {
           on<EnableLocalHeroModeSideEffect>(sideEffect, (_) {
+            print("testr EnableLocalHeroModeSideEffect");
             setState(() {
               isLocalHeroEnable = true;
             });

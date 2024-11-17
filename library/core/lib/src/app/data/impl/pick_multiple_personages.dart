@@ -10,9 +10,12 @@ class PickMultiplePersonages extends Equatable {
   final String question;
   @JsonKey(name: "amount_of_correct_answers")
   final int amountOfCorrectAnswers;
+  @JsonKey(name: "question_black_background")
+  final bool questionBlackBackground;
   final List<MPOption> options;
 
-  const PickMultiplePersonages(this.imageFile, this.question, this.amountOfCorrectAnswers, this.options);
+  const PickMultiplePersonages(this.imageFile, this.question, this.amountOfCorrectAnswers, this.options,
+      {this.questionBlackBackground = false});
 
   factory PickMultiplePersonages.fromJson(Map<String, dynamic> json) => _$PickMultiplePersonagesFromJson(json);
 

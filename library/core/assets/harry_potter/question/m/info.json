@@ -1,0 +1,30 @@
+{
+  "hard_level": "3",
+  "type": "pick_multiple_personages",
+  "context": {
+    "pick_multiple_personages": {
+      "image_file": "packages/core/assets/harry_potter/question/m/header.png",
+      "question": "Pick two people from Hufflepuff",
+      "question_black_background" : true,
+      "amount_of_correct_answers": 2,
+      "options": [
+        {"is_right":  false,
+          "name":  "Nigel Wolpert",
+          "avatar" : "assets/harry_potter/question/m/nigel.png"
+        },
+        {"is_right":  true,
+          "name":  "Susan Bones",
+          "avatar" : "assets/harry_potter/question/m/susan.png"
+        },
+        {"is_right":  true,
+          "name":  "Theseus Scamander",
+          "avatar" : "assets/harry_potter/question/m/theseus.png"
+        },
+        {"is_right":  false,
+          "name":  "Lucius Malfoy",
+          "avatar" : "assets/harry_potter/question/m/lucius.png"
+        }
+      ]
+    }
+  }
+}

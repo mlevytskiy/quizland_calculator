@@ -1,4 +1,5 @@
 import 'package:core/const/resource.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
@@ -16,18 +17,21 @@ class _ButtonBackgroundState extends State<ButtonBackground> {
     'width': 150.0,
     'height': 150.0,
     'borderRadius': 150.0,
+    'padding': Di.statusBarHeight,
   };
 
   final Map<String, dynamic> _pointProperties = {
     'width': 0.0,
     'height': 0.0,
+    'padding': 0.0,
   };
 
   final Map<String, dynamic> _rectangleProperties = {
-    'height': 150.0,
+    'height': 180.0,
     'color': Colors.transparent,
     'borderRadius': 0.0,
     'opacity': 0.5,
+    'padding': 0.0,
   };
 
   V? _get<V>(String property) {
@@ -51,21 +55,24 @@ class _ButtonBackgroundState extends State<ButtonBackground> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      width: _get('width') ?? 0.0,
-      height: _get('height') ?? 0.0,
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(_get('borderRadius') ?? 0.0),
-        color: _get('color') ?? Colors.green,
-        image: DecorationImage(
-          image: const AssetImage(R.ASSETS_HOGWARDS_BACKGROUND_PNG, package: "core"),
-          opacity: _get('opacity') ?? 0.0,
-          fit: BoxFit.fitWidth,
+    return Padding(
+      padding: EdgeInsets.only(top: _get('padding')),
+      child: AnimatedContainer(
+        width: _get('width') ?? 0.0,
+        height: _get('height') ?? 0.0,
+        decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(_get('borderRadius') ?? 0.0),
+          color: _get('color') ?? Colors.green,
+          image: DecorationImage(
+            image: const AssetImage(R.ASSETS_HOGWARDS_BACKGROUND_PNG, package: "core"),
+            opacity: _get('opacity') ?? 0.0,
+            fit: BoxFit.fitWidth,
+          ),
         ),
+        duration: const Duration(seconds: 1),
+        onEnd: () => widget.onAnimationEnd?.call(widget.viewType),
       ),
-      duration: const Duration(seconds: 1),
-      onEnd: () => widget.onAnimationEnd?.call(widget.viewType),
     );
   }
 }

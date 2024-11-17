@@ -56,10 +56,22 @@ flutter:
     - assets/harry_potter/question/d/
     - assets/harry_potter/question/e/
     - assets/harry_potter/question/f/
+    - assets/harry_potter/question/g/
+    - assets/harry_potter/question/h/
     - assets/harry_potter/question/i/
+    - assets/harry_potter/question/j/
+    - assets/harry_potter/question/k/
+    - assets/harry_potter/question/l/
+    - assets/harry_potter/question/m/
+    - assets/harry_potter/question/n/
     - assets/harry_potter/question/o/
+    - assets/harry_potter/question/p/
     - assets/harry_potter/question/q/
+    - assets/harry_potter/question/r/
+    - assets/harry_potter/question/s/
     - assets/harry_potter/question/u/
+    - assets/harry_potter/question/t/
+    - assets/harry_potter/question/v/
     - assets/harry_potter/house/
   fonts:
     - family: Harry

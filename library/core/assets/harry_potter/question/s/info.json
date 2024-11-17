@@ -1,0 +1,26 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "text_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/s/dragon.png",
+      "question": "This is the smallest of known dragons and the swiftest in flight?",
+      "question_lines" : 3,
+      "options": [
+        {"is_right":  false,
+          "text":  "Hungarian Horntail Dragon"
+        },
+        {"is_right":  true,
+          "text":  "Peruvian Vipertooth Dragon"
+        },
+        {"is_right":  false,
+          "text":  "Chinese Fireball Dragon"
+        },
+        {"is_right":  false,
+          "text":  "Norwegian Redgeback Dragon"
+        }
+      ]
+    }
+  }
+}

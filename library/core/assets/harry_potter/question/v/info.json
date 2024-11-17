@@ -1,0 +1,25 @@
+{
+  "hard_level": "3",
+  "type": "pick_multiple_personages",
+  "context": {
+    "pick_multiple_personages": {
+      "image_file": "packages/core/assets/harry_potter/question/v/header2.png",
+      "question": "Pick 1 person from Gryffindor",
+      "amount_of_correct_answers": 1,
+      "options": [
+        { "is_right" : true,
+          "name" : "Harry Potter",
+          "avatar" : "assets/harry_potter/question/v/harry.jpeg"
+        },
+        {"is_right": false,
+          "name" : "Trolley Witch",
+          "avatar" : "assets/harry_potter/question/k/trolley.png"
+        },
+        {"is_right":  false,
+          "name" : "Ominis Gaunt",
+          "avatar" : "assets/harry_potter/question/k/ominis.png"
+        }
+      ]
+    }
+  }
+}

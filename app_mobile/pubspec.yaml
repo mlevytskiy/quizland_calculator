@@ -31,4 +31,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/
+#  help to update asssets from core lib when we build mobile app
 

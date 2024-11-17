@@ -1,3 +1,3 @@
 part of 'hat_widget.dart';
 
-TextStyle hatMessageTextStyle = const TextStyle(fontSize: 20, color: Colors.white);
+TextStyle hatMessageTextStyle = const TextStyle(fontSize: 20, color: Colors.white, height: 1.0);

@@ -18,8 +18,11 @@ class HatInfo {
   final double messageHeight;
   final bool showBlackBackground;
   final Color textBackgroundColor;
-  HatInfo(this.constraint, this.message, this.messageWidth, this.messageHeight, this.showBlackBackground,
-      this.textBackgroundColor);
+  final int questionLines;
+  HatInfo(this.constraint, this.message, this.messageWidth, double messageHeight, this.showBlackBackground,
+      this.textBackgroundColor, int? questionLines)
+      : questionLines = questionLines ?? 2,
+        messageHeight = ((messageHeight / 2) * (questionLines ?? 2));
 }
 
 class Simple4OptionsWidgetConfiguration {
@@ -65,17 +68,18 @@ class Simple4OptionsWidget extends StatefulWidget {
 }
 
 class _Simple4OptionsWidgetState extends State<Simple4OptionsWidget> {
+  static final ConstraintId guideline1 = ConstraintId('guideline1');
+  static final ConstraintId header = ConstraintId('header');
+  static final ConstraintId headerImage = ConstraintId('headerImage');
+
   Map<int, SimpleCircleOptionState> optionSelectionState = {
     0: SimpleCircleOptionState.clickable,
     1: SimpleCircleOptionState.clickable,
     2: SimpleCircleOptionState.clickable,
     3: SimpleCircleOptionState.clickable,
   };
-  late HatInfo hatInfo;
 
-  ConstraintId guideline1 = ConstraintId('guideline1');
-  ConstraintId header = ConstraintId('header');
-  ConstraintId headerImage = ConstraintId('headerImage');
+  late HatInfo hatInfo;
 
   @override
   void initState() {
@@ -91,18 +95,15 @@ class _Simple4OptionsWidgetState extends State<Simple4OptionsWidget> {
         300,
         60,
         true,
-        widget.textBackgroundColor);
+        widget.textBackgroundColor,
+        widget.blocState.simple4Options.questionLines);
   }
 
   @override
   Widget build(BuildContext context) {
     return ConstraintLayout(
       children: [
-        ConstColors.background
-            .container(
-                // child: widget.blocState.simple4Options.imageFile.imageAsset().center(),
-                )
-            .applyConstraint(
+        ConstColors.background.container().applyConstraint(
               id: header,
               width: matchParent,
               height: matchConstraint,
@@ -187,7 +188,7 @@ class _Simple4OptionsWidgetState extends State<Simple4OptionsWidget> {
       ..setConstraintParams(verticalBias: verticalBias, horizontalBias: horizontalBias, guideline: guideline)
       ..setOnClick((bool isCorrect, String message, Color hatTextBackgroundColor, Constraint hatConstraint) {
         setState(() {
-          hatInfo = HatInfo(hatConstraint, message, 100, 50, false, hatTextBackgroundColor);
+          hatInfo = HatInfo(hatConstraint, message, 100, 50, false, hatTextBackgroundColor, null);
           optionSelectionState.forEach((index, value) {
             optionSelectionState[index] = (index != optionIndex)
                 ? SimpleCircleOptionState.disabled

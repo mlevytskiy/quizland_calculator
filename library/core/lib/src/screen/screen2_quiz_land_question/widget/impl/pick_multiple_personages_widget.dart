@@ -29,13 +29,15 @@ class PickMultiplePersonagesWidget extends StatefulWidget {
 }
 
 class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWidget> {
-  final CoordinateBuilder _coordinateBuilder = CoordinateBuilder()..setItemAmount(5);
+  final CoordinateBuilder _coordinateBuilder = CoordinateBuilder();
   late PersonagesCheckBoxGroupController controller;
   late HatInfo hatInfo;
 
   @override
   void initState() {
     super.initState();
+    print("testr ghghghghgh=${widget.blocState.pickMultiplePersonages.questionBlackBackground}");
+    _coordinateBuilder.setItemAmount(widget.blocState.pickMultiplePersonages.options.length);
     hatInfo = HatInfo(
       Constraint(
         id: CId.hat,
@@ -44,17 +46,17 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
         zIndex: 12,
       ),
       widget.blocState.pickMultiplePersonages.question,
-      300,
+      310,
       50,
-      false,
+      widget.blocState.pickMultiplePersonages.questionBlackBackground,
       widget.hatTextBackgroundColor,
       0.3,
     );
     controller = PersonagesCheckBoxGroupController(
         checkedColor: Colors.green,
         uncheckedColor: Colors.grey,
-        amount: 5,
-        answerAmount: 2,
+        amount: widget.blocState.pickMultiplePersonages.options.length,
+        answerAmount: widget.blocState.pickMultiplePersonages.amountOfCorrectAnswers,
         correctAnswers: widget.blocState.pickMultiplePersonages.options.map((item) => item.isRight).toList().asMap(),
         callback: (lastIndex, isCorrect) async {
           setState(() {
@@ -97,11 +99,7 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
           horizontal: true,
           guidelinePercent: 0.3,
         ),
-        _option(0),
-        _option(1),
-        _option(2),
-        _option(3),
-        _option(4),
+        ..._options(),
         ConstColors.background.container().applyConstraint(
               width: matchParent,
               height: matchConstraint,
@@ -139,6 +137,15 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
     );
   }
 
+  List<Widget> _options() {
+    int listSize = widget.blocState.pickMultiplePersonages.options.length;
+    List<Widget> result = [];
+    for (int i = 0; i < listSize; i++) {
+      result.add(_option(i));
+    }
+    return result;
+  }
+
   Widget _option(int index) {
     return PersonageCheckBox(
       option: widget.blocState.pickMultiplePersonages.options[index],
@@ -146,7 +153,7 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
       controller: controller,
     ).applyConstraint(
       id: CId.option(index),
-      width: 100,
+      width: 110,
       height: 110,
       right: parent.right,
       left: parent.left,

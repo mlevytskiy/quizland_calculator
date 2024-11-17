@@ -11,9 +11,11 @@ class Simple4Options extends Equatable {
   final String imageFile;
   final Simple4OptionSubtype subtype;
   final String question;
+  @JsonKey(name: "question_lines")
+  final int? questionLines;
   final List<QuestionOption> options;
 
-  const Simple4Options(this.imageFile, this.question, this.options, this.subtype);
+  const Simple4Options(this.imageFile, this.question, this.options, this.subtype, this.questionLines);
 
   factory Simple4Options.fromJson(Map<String, dynamic> json) => _$Simple4OptionsFromJson(json);
 

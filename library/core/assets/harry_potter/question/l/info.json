@@ -1,0 +1,26 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "text_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/l/lobalug.png",
+      "question": "This creature is found at the bottom of the North Sea?",
+      "question_lines" : 3,
+      "options": [
+        {"is_right":  false,
+          "text":  "Gnome"
+        },
+        {"is_right":  false,
+          "text":  "Crup"
+        },
+        {"is_right":  true,
+          "text":  "Lobalug"
+        },
+        {"is_right":  false,
+          "text":  "Bundimun"
+        }
+      ]
+    }
+  }
+}

@@ -1,15 +1,12 @@
 import 'package:conditional_wrap/conditional_wrap.dart';
 import 'package:core/const/resource.dart';
-import 'package:core/src/app/utils.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:local_hero/local_hero.dart';
 import 'package:typethis/typethis.dart';
 
-import 'harry_potter_button_callback.dart';
-import 'harry_potter_button_state.dart';
 import 'hero_state.dart';
-import 'impl/button_background.dart';
 
 const String tag9 = "r9";
 const String tagYellowCircle = "r934_yellow_circle";
@@ -82,6 +79,7 @@ class _HarryPotterButtonState extends State<HarryPotterButton> {
             top: parent.top,
             left: parent.left,
             right: parent.right,
+            margin: widget.state.showHeaderTextMessage ? EdgeInsets.only(top: Di.statusBarHeight) : EdgeInsets.zero,
             verticalBias: widget.state.showHeaderTextMessage ? 0.1 : 0.5,
             zIndex: 11,
           ),
@@ -119,6 +117,9 @@ class _HarryPotterButtonState extends State<HarryPotterButton> {
             id: cId(tag9),
             right: parent.center,
             bottom: cId(tagYellowCircle).bottom,
+            margin: widget.state.showHeaderTextMessage
+                ? const EdgeInsets.only(top: 5)
+                : EdgeInsets.only(top: Di.statusBarHeight),
             top: cId(tagYellowCircle).top,
             zIndex: 20,
           ),

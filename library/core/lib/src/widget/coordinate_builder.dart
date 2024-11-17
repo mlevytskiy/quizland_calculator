@@ -15,6 +15,31 @@ class CoordinateBuilder {
                         . . . . . . 4 .
   ''';
 
+  static const matrixFor6Elements = '''
+                        . . . . . . . .
+                        . . 0 . . . . .
+                        . . . . . . . .
+                        . . . . . . 1 .
+                        . . . . . . . .
+                        . 2 . . . . . .
+                        . . . . . . . .
+                        . . . . . . . 3
+                        . . . . 4 . . .
+                        . . . . . . . .
+                        . 5 . . . . . .
+  ''';
+
+  static const matrixFor4Elements = '''
+                        . . . . . . . .
+                        . . . 0 . . . .
+                        . . . . . . . 1
+                        . . . . . . . .
+                        . 2 . . . . . .
+                        . . . . . . . .
+                        . . . . . . 3 .
+                        . . . . . . . .
+  ''';
+
   List<List<String>> _array = [];
   late int _arrayXLength;
   late int _arrayYLength;
@@ -61,9 +86,13 @@ class CoordinateBuilder {
   }
 
   void setItemAmount(int amount) {
-    // if (amount == 5) {
-    _set2DArrayStr(matrixFor5Elements);
-    // }
+    String matrix = switch (amount) {
+      6 => matrixFor6Elements,
+      5 => matrixFor5Elements,
+      4 => matrixFor4Elements,
+      _ => matrixFor4Elements,
+    };
+    _set2DArrayStr(matrix);
     _coordinates = _getIndexes(amount).map((point) => _convertIndexesToCoordinate(point)).toList();
   }
 
