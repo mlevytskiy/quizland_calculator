@@ -1,0 +1,37 @@
+{
+  "hard_level": "3",
+  "type": "pick_multiple_personages",
+  "context": {
+    "pick_multiple_personages": {
+      "image_file": "packages/core/assets/harry_potter/question/t/header2.png",
+      "question": "Pick two people from Ravenclaw",
+      "amount_of_correct_answers": 2,
+      "options": [
+        { "is_right" : false,
+          "name" : "Romilda Vane",
+          "avatar" : "assets/harry_potter/question/t/romilda.png"
+        },
+        {"is_right":  true,
+          "name" : "Terry Boot",
+          "avatar" : "assets/harry_potter/question/t/terry.png"
+        },
+        {"is_right":  false,
+          "name" : "Sirius Black III",
+          "avatar" : "assets/harry_potter/question/t/sirius.png"
+        },
+        {"is_right":  false,
+          "name" : "Marcus Flint",
+          "avatar" : "assets/harry_potter/question/k/monmarcus.png"
+        },
+        {"is_right":  true,
+          "name" : "Hector Fawley",
+          "avatar" : "assets/harry_potter/question/t/hector.png"
+        },
+        {"is_right": false,
+          "name" : "Lawrence Davies",
+          "avatar" : "assets/harry_potter/question/t/lawrence.png"
+        }
+      ]
+    }
+  }
+}

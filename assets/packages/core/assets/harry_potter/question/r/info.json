@@ -1,0 +1,29 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "personages_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/r/institute.png",
+      "question": "Who is the headmaster of Dumstrang Instritute?",
+      "options": [
+        {"is_right":  false,
+          "text":  "Viktor Krum",
+          "image_file": "packages/core/assets/harry_potter/question/r/victor.png"
+        },
+        {"is_right":  false,
+          "text":  "Percy Weasley",
+          "image_file": "packages/core/assets/harry_potter/question/r/percy.png"
+        },
+        {"is_right":  false,
+          "text":  "Gellert Grindelwald",
+          "image_file": "packages/core/assets/harry_potter/question/r/grindelwald.jpg"
+        },
+        {"is_right":  true,
+          "text":  "Igor Karkaroff",
+          "image_file": "packages/core/assets/harry_potter/question/r/igor.png"
+        }
+      ]
+    }
+  }
+}

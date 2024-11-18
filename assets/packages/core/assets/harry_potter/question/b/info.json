@@ -1,0 +1,25 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "numbers_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/b/ron.png",
+      "question": "How many siblings does Ron have?",
+      "options": [
+        {"is_right": false,
+          "text":  "1"
+        },
+        {"is_right": true,
+          "text":  "6"
+        },
+        {"is_right": false,
+          "text":  "4"
+        },
+        {"is_right": false,
+          "text":  "8"
+        }
+      ]
+    }
+  }
+}

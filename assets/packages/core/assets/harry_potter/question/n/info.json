@@ -1,0 +1,26 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "text_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/n/harry_map.png",
+      "question": "When Harry used the Marauder’s Map, it showed him the One-Eyed Witch Passageway, which led him from Hogwarts to where?",
+      "question_lines" : 4,
+      "options": [
+        {"is_right":  false,
+          "text":  "Three\nBroomsticks Inn"
+        },
+        {"is_right":  true,
+          "text":  "Honeydukes"
+        },
+        {"is_right":  false,
+          "text":  "Shrieking Shack"
+        },
+        {"is_right":  false,
+          "text":  "Room of Requirement"
+        }
+      ]
+    }
+  }
+}

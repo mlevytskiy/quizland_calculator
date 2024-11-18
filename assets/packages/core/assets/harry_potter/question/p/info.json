@@ -1,0 +1,29 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "personages_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/p/heade_moody.png",
+      "question": "Who was the impostor disguised as Mad-Eye Moody?",
+      "options": [
+        {"is_right":  false,
+          "text":  "Severus Snape",
+          "image_file": "packages/core/assets/harry_potter/question/p/snape.jpg"
+        },
+        {"is_right":  true,
+          "text":  "Barty Couch Jr.",
+          "image_file": "packages/core/assets/harry_potter/question/p/barty.png"
+        },
+        {"is_right":  false,
+          "text":  "Petter Pettigrew",
+          "image_file": "packages/core/assets/harry_potter/question/p/peter.jpeg"
+        },
+        {"is_right":  false,
+          "text":  "Lucrus Malfoy",
+          "image_file": "packages/core/assets/harry_potter/question/p/lucius.jpg"
+        }
+      ]
+    }
+  }
+}

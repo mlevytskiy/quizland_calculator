@@ -1,0 +1,29 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "personages_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/j/yule_ball2.jpeg",
+      "question": "Who attended the Yule Ball at Hogwarts with Hermione?",
+      "options": [
+        {"is_right":  false,
+          "text":  "Cedric Diggory",
+          "image_file": "packages/core/assets/harry_potter/question/j/cedric.jpeg"
+        },
+        {"is_right":  false,
+          "text":  "Ron Weasley",
+          "image_file": "packages/core/assets/harry_potter/question/j/ron.png"
+        },
+        {"is_right":  false,
+          "text":  "Harry Potter",
+          "image_file": "packages/core/assets/harry_potter/question/j/harry.jpeg"
+        },
+        {"is_right":  true,
+          "text":  "Victor Krum",
+          "image_file": "packages/core/assets/harry_potter/question/j/victor.png"
+        }
+      ]
+    }
+  }
+}
