@@ -1,0 +1,38 @@
+{
+  "hard_level": "3",
+  "type": "pick_multiple_personages",
+  "context": {
+    "pick_multiple_personages": {
+      "image_file": "packages/core/assets/harry_potter/question/i/harry_wand.png",
+      "question": "Pick two people from Slytherin",
+      "amount_of_correct_answers": 2,
+      "options": [
+        {
+          "is_right" : true,
+          "name" : "Draco Malfoy",
+          "avatar" : "assets/harry_potter/question/i/draco.jpg"
+        },
+        {
+          "is_right": false,
+          "name": "Alicia Spinnet",
+          "avatar": "assets/harry_potter/question/i/alicia.png"
+        },
+        {
+          "is_right": false,
+          "name": "George Weasley",
+          "avatar": "assets/harry_potter/question/i/george.png"
+        },
+        {
+          "is_right" : true,
+          "name" : "Vincent Crabbe",
+          "avatar" : "assets/harry_potter/question/i/vincent.png"
+        },
+        {
+          "is_right": false,
+          "name": "Amanda",
+          "avatar": "assets/harry_potter/question/i/amanda.png"
+        }
+      ]
+    }
+  }
+}

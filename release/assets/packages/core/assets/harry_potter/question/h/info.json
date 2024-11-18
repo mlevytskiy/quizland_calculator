@@ -1,0 +1,26 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "text_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/h/nicolas.jpg",
+      "question": "Where in England do Nicolas Flammel and his wife Perenelle live?",
+      "question_lines" : 3,
+      "options": [
+        {"is_right":  false,
+          "text":  "London"
+        },
+        {"is_right":  true,
+          "text":  "Devon"
+        },
+        {"is_right":  false,
+          "text":  "Somerset"
+        },
+        {"is_right":  false,
+          "text":  "Cornwall"
+        }
+      ]
+    }
+  }
+}

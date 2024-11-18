@@ -1,0 +1,30 @@
+{
+  "hard_level": "3",
+  "type": "simple_4_options",
+  "context": {
+    "simple_4_options": {
+      "subtype": "personages_in_options",
+      "image_file": "packages/core/assets/harry_potter/question/g/cat.png",
+      "question": "Which professor is an Animagus capable of turning into a cat?",
+      "question_lines" : 3,
+      "options": [
+        {"is_right":  true,
+          "text":  "McGonagall",
+          "image_file": "packages/core/assets/harry_potter/question/g/mcgonagall.jpg"
+        },
+        {"is_right":  false,
+          "text":  "Sprout",
+          "image_file": "packages/core/assets/harry_potter/question/g/sprout.png"
+        },
+        {"is_right":  false,
+          "text":  "Snape",
+          "image_file": "packages/core/assets/harry_potter/question/g/snape.png"
+        },
+        {"is_right":  false,
+          "text":  "Flitwick",
+          "image_file": "packages/core/assets/harry_potter/question/g/flitwick.jpeg"
+        }
+      ]
+    }
+  }
+}

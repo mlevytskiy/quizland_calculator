@@ -1,0 +1,37 @@
+{
+  "hard_level": "3",
+  "type": "pick_multiple_personages",
+  "context": {
+    "pick_multiple_personages": {
+      "image_file": "packages/core/assets/harry_potter/question/k/header.png",
+      "question": "Pick two people from Gryffindor",
+      "amount_of_correct_answers": 2,
+      "options": [
+        { "is_right" : true,
+          "name" : "Angelina Weasley",
+          "avatar" : "assets/harry_potter/question/k/angelina.png"
+        },
+        {"is_right": false,
+          "name" : "Trolley Witch",
+          "avatar" : "assets/harry_potter/question/k/trolley.png"
+        },
+        {"is_right":  false,
+          "name" : "Ominis Gaunt",
+          "avatar" : "assets/harry_potter/question/k/ominis.png"
+        },
+        {"is_right":  true,
+          "name" : "Fred Weasley",
+          "avatar" : "assets/harry_potter/question/k/fred.png"
+        },
+        {"is_right":  false,
+          "name" : "Terry Boot",
+          "avatar" : "assets/harry_potter/question/k/terry.png"
+        },
+        {"is_right":  false,
+          "name" : "Marcus Flint",
+          "avatar" : "assets/harry_potter/question/k/monmarcus.png"
+        }
+      ]
+    }
+  }
+}
