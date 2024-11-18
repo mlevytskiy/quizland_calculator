@@ -36,7 +36,6 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
   @override
   void initState() {
     super.initState();
-    print("testr ghghghghgh=${widget.blocState.pickMultiplePersonages.questionBlackBackground}");
     _coordinateBuilder.setItemAmount(widget.blocState.pickMultiplePersonages.options.length);
     hatInfo = HatInfo(
       Constraint(
@@ -75,18 +74,6 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
   Widget build(BuildContext context) {
     return ConstraintLayout(
       children: [
-        ConstColors.background
-            .container(
-                // child: widget.blocState.simple4Options.imageFile.imageAsset().center(),
-                )
-            .applyConstraint(
-              id: CId.header,
-              width: matchParent,
-              height: matchConstraint,
-              top: parent.top,
-              bottom: CId.guideline1.top,
-              zIndex: 10,
-            ),
         widget.blocState.pickMultiplePersonages.imageFile.imageAsset().applyConstraint(
               id: CId.headerImage,
               top: parent.top,
@@ -103,7 +90,7 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
         ConstColors.background.container().applyConstraint(
               width: matchParent,
               height: matchConstraint,
-              top: CId.guideline1.bottom,
+              top: parent.top,
               bottom: parent.bottom,
             ),
         HatWidget(

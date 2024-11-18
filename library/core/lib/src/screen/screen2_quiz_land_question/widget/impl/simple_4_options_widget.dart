@@ -69,7 +69,6 @@ class Simple4OptionsWidget extends StatefulWidget {
 
 class _Simple4OptionsWidgetState extends State<Simple4OptionsWidget> {
   static final ConstraintId guideline1 = ConstraintId('guideline1');
-  static final ConstraintId header = ConstraintId('header');
   static final ConstraintId headerImage = ConstraintId('headerImage');
 
   Map<int, SimpleCircleOptionState> optionSelectionState = {
@@ -103,14 +102,6 @@ class _Simple4OptionsWidgetState extends State<Simple4OptionsWidget> {
   Widget build(BuildContext context) {
     return ConstraintLayout(
       children: [
-        ConstColors.background.container().applyConstraint(
-              id: header,
-              width: matchParent,
-              height: matchConstraint,
-              top: parent.top,
-              bottom: guideline1.top,
-              zIndex: 10,
-            ),
         widget.blocState.simple4Options.imageFile.imageAsset().applyConstraint(
               id: headerImage,
               top: parent.top,
@@ -134,7 +125,7 @@ class _Simple4OptionsWidgetState extends State<Simple4OptionsWidget> {
         ConstColors.background.container().applyConstraint(
               width: matchParent,
               height: matchConstraint,
-              top: guideline1.bottom,
+              top: parent.top,
               bottom: parent.bottom,
             ),
         HatWidget(

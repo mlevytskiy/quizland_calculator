@@ -23,7 +23,6 @@ class ConstColors {
 
 class CId {
   static final ConstraintId guideline1 = ConstraintId('guideline1');
-  static final ConstraintId header = ConstraintId('header');
   static final ConstraintId headerImage = ConstraintId('headerImage');
   static final ConstraintId hat = cId("hat");
   static ConstraintId option(int index) => cId("item$index");
