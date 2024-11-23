@@ -274,7 +274,7 @@ class _HarryPotterButtonState extends State<HarryPotterButton> {
               .applyConstraintId(id: cId(tagEyesGlasses)),
           if (widget.state.showHeaderTextMessage)
             const SizedBox(
-                width: 255,
+                width: 265,
                 child: TypeThis(
                   string: "Hogwards express",
                   speed: 150,

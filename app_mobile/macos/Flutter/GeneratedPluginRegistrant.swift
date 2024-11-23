@@ -10,7 +10,7 @@ import audio_session
 import isar_flutter_libs
 import just_audio
 import path_provider_foundation
-import sqflite
+import sqflite_darwin
 import video_player_avfoundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {

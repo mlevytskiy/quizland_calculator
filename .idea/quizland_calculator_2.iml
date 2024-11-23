@@ -24,6 +24,9 @@
       <excludeFolder url="file://$MODULE_DIR$/library/third_part_library/local_hero/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/library/third_part_library/local_hero/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/library/third_part_library/local_hero/build" />
+      <excludeFolder url="file://$MODULE_DIR$/app_mobile_that_works_on_ios/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/app_mobile_that_works_on_ios/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/app_mobile_that_works_on_ios/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
