@@ -90,6 +90,10 @@ class _CalculatorWidgetState extends State<CalculatorWidget> {
                 }
               });
             });
+          } else if (output == "111") {
+            Future.delayed(const Duration(milliseconds: 300), () {
+              Di.routeMediator.goRewards();
+            });
           }
 
           // Format the input with periods as thousands separators

@@ -1,3 +1,4 @@
+import 'package:core/src/screen/screen3_rewards/rewards_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:go_router_paths/go_router_paths.dart';
@@ -46,6 +47,13 @@ class RouterMediator {
                 ),
               ],
             ),
+            GoRoute(
+              path: AppPaths.home.rewards.goRoute,
+              builder: (context, state) {
+                // Di.initAppLocalization(context);
+                return const RewardsScreen();
+              },
+            ),
           ],
         ),
       ],
@@ -60,6 +68,10 @@ class RouterMediator {
 
   void goHome() {
     _go(AppPaths.home.path);
+  }
+
+  void goRewards() {
+    _go(AppPaths.home.rewards.path);
   }
 
   void goQuizLand() {
@@ -97,6 +109,11 @@ class AppPaths {
 class HomePath extends Path<HomePath> {
   HomePath() : super('home');
   QuizLand get quizLand => QuizLand(parent: this);
+  Rewards get rewards => Rewards(parent: this);
+}
+
+class Rewards extends Path<Rewards> {
+  Rewards({parent}) : super('rewards', parent: parent);
 }
 
 class QuizLand extends Path<QuizLand> {

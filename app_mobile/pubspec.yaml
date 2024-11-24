@@ -22,6 +22,7 @@ dependencies:
     path: ../library/repository
   repository_mobile:
     path: ../library/repository_mobile
+  icons_launcher: ^3.0.0
 
 dev_dependencies:
   flutter_test:

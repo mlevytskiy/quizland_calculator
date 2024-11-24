@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 extension SizingExtension on Widget {
+  Widget container() => Container(child: this);
+
   /// Wrap the widget with a [SizedBox] widget.
   Widget size(double width, double height) => SizedBox.fromSize(
         size: Size(width, height),

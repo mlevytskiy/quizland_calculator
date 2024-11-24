@@ -16,7 +16,7 @@ class Di {
   static YAJsonIsolate get readAssetsIsolate => locator.get<YAJsonIsolate>();
   static AudioPlayer get audioPlayer => locator.get<AudioPlayer>();
 
-  static double get statusBarHeight => 35.0;
+  static double statusBarHeight = 0;
 
   static Future<void> initLocator() async {
     // locator.addLazySingleton<UserRepository>(MemoryUserRepository.new);

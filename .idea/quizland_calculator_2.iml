@@ -27,6 +27,15 @@
       <excludeFolder url="file://$MODULE_DIR$/app_mobile_that_works_on_ios/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/app_mobile_that_works_on_ios/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/app_mobile_that_works_on_ios/build" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper/build" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper_mobile/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper_mobile/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper_mobile/build" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper_web/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper_web/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/library/status_bar_helper_web/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

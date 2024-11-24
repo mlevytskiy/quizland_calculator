@@ -11,7 +11,6 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   Di.locator.addInstance(await UserRepositoryMobile.createIsar());
   Di.locator.addLazySingleton<UserRepository>(UserRepositoryMobile.new);
-  // Di.locator.addLazySingleton<UserRepository>(()=>UserRepositoryMobile.create());
   await Di.initLocator();
   FlutterNativeSplash.remove();
   await JustAudioBackground.init(
@@ -28,6 +27,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPlatformDark = WidgetsBinding.instance.window.platformBrightness == Brightness.dark;
+    Di.statusBarHeight = MediaQuery.of(context).padding.top;
     return ThemeProvider(
       initTheme: lightTheme, //isPlatformDark ? darkTheme : lightTheme,
       builder: (context, theme) {
