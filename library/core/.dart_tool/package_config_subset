@@ -62,6 +62,10 @@ boolean_selector
 2.17
 file:///Users/max/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/
 file:///Users/max/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib/
+bubble_box
+2.12
+file:///Users/max/.pub-cache/hosted/pub.dev/bubble_box-0.5.3/
+file:///Users/max/.pub-cache/hosted/pub.dev/bubble_box-0.5.3/lib/
 build
 2.19
 file:///Users/max/.pub-cache/hosted/pub.dev/build-2.4.1/
@@ -542,10 +546,6 @@ repository
 3.4
 file:///Users/max/StudioProjects/quizland_calculator_2/library/repository/
 file:///Users/max/StudioProjects/quizland_calculator_2/library/repository/lib/
-status_bar_helper
-3.4
-file:///Users/max/StudioProjects/quizland_calculator_2/library/status_bar_helper/
-file:///Users/max/StudioProjects/quizland_calculator_2/library/status_bar_helper/lib/
 local_hero
 3.4
 file:///Users/max/StudioProjects/quizland_calculator_2/library/third_part_library/local_hero/

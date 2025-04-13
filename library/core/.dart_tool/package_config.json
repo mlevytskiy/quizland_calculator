@@ -98,6 +98,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "bubble_box",
+      "rootUri": "file:///Users/max/.pub-cache/hosted/pub.dev/bubble_box-0.5.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "build",
       "rootUri": "file:///Users/max/.pub-cache/hosted/pub.dev/build-2.4.1",
       "packageUri": "lib/",
@@ -668,12 +674,6 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "status_bar_helper",
-      "rootUri": "../../status_bar_helper",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
       "name": "stream_channel",
       "rootUri": "file:///Users/max/.pub-cache/hosted/pub.dev/stream_channel-2.1.2",
       "packageUri": "lib/",
@@ -854,7 +854,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-11-24T01:50:40.467286Z",
+  "generated": "2024-12-04T20:53:54.725336Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///opt/homebrew/Caskroom/flutter/2.10.3/flutter",

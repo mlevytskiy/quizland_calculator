@@ -31,7 +31,6 @@ class _QuizLandQuestionWidgetState extends State<QuizLandQuestionWidget> {
         bloc: context.read<QuizLandQuestionBloc>(),
         sideEffectsListener: (context, sideEffect) {
           on<EnableLocalHeroModeSideEffect>(sideEffect, (_) {
-            print("testr EnableLocalHeroModeSideEffect");
             setState(() {
               isLocalHeroEnable = true;
             });

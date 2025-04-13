@@ -34,6 +34,7 @@ dependencies:
   just_audio_background: ^0.0.1-beta.13
   just_audio: ^0.9.42
   flutter_bloc_side_effect: ^0.0.2
+  bubble_box: ^0.5.3
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +75,12 @@ flutter:
     - assets/harry_potter/question/v/
     - assets/harry_potter/house/
   fonts:
+    - family: SF
+      fonts:
+        - asset: assets/SFUIDisplay-Medium.ttf
+    - family: SF Light
+      fonts:
+        - asset: assets/SFUIDisplay-Light.ttf
     - family: Harry
       fonts:
         - asset: assets/harry_potter.ttf

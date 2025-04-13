@@ -1,7 +1,11 @@
-import 'package:conditional_wrap/conditional_wrap.dart';
 import 'package:core/const/resource.dart';
 import 'package:core/src/app/app.locator.dart';
+import 'package:core/src/app/widget_extension/visibility.dart';
 import 'package:core/src/screen/screen1_quiz_land/bloc/quiz_land_bloc.dart';
+import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/impl/hat_widget/hat_dialog_model.dart';
+import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/impl/hat_widget/hat_dialog_state_enum.dart';
+import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/impl/hat_widget/hat_widget3.dart';
+import 'package:core/src/screen/screen2_quiz_land_question/widget/impl/impl/hat_widget/hero_info.dart';
 import 'package:core/src/widget/grid_view_builder.dart';
 import 'package:core/src/widget/harry_potter_button/harry_potter_button.dart';
 import 'package:core/src/widget/harry_potter_button/harry_potter_button_callback.dart';
@@ -74,7 +78,6 @@ class _QuizLandWidgetState extends State<QuizLandWidget> {
               //   Di.audioPlayer.setVolume(0.02);
               //   Di.audioPlayer.play();
               // }
-              print("testr result=$result");
             });
           }))
         .build();
@@ -110,39 +113,25 @@ class _QuizLandWidgetState extends State<QuizLandWidget> {
           id: cId("hat"),
           bottom: parent.bottom,
           top: cId("grid").center,
-          right: cId("grid").center,
+          right: parent.right,
           left: parent.left,
-          horizontalBias: 0.3,
-          verticalBias: 0.8,
-          zIndex: 21,
+          height: matchConstraint,
+          width: matchConstraint,
+          horizontalBias: 0.0,
+          verticalBias: 1.0,
+          margin: const EdgeInsets.only(left: 4.0, right: 20.0),
+          zIndex: 25,
         )
       ],
       children: [
         (HarryPotterButtonBuilder()..setQuizLandState(widget.quizLandState))
             .build()
             .applyConstraintId(id: ConstraintId("header")),
-        WidgetWrapper(
-            wrapper: (child) => (widget.quizLandState == QuizLandState.showHeaderTextPhase2AndGrid)
-                ? Hero(tag: "hat", child: child)
-                : child,
-            child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  bloc.quizResult.clear();
-                });
-              },
-              child: SizedBox(
-                width: 40,
-                height: 40,
-                child: Container(
-                  decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white24),
-                  child: Image.asset(
-                    R.ASSETS_HARRY_POTTER_HAT_PNG,
-                    package: "core",
-                  ),
-                ),
-              ),
-            )).applyConstraintId(id: cId("hat")),
+        HatWidget3(
+          heroInfo: HeroInfo(
+              isHeroEnable: true, isLocalHeroEnable: false, heroTextTag: "1", heroHatTag: "hat", localHeroTag: "hat"),
+          hatDialogModel: HatDialogModel.create(state: HatDialogStateEnum.quizFinished),
+        ).visible(widget.quizLandState == QuizLandState.showHeaderTextPhase2AndGrid).applyConstraintId(id: cId("hat")),
         AnimatedOpacity(
             opacity: (QuizLandState.showHeaderTextPhase2AndGrid == widget.quizLandState) ? 0.8 : 0.0,
             duration: const Duration(seconds: 1),

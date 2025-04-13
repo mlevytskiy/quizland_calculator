@@ -28,6 +28,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPlatformDark = WidgetsBinding.instance.window.platformBrightness == Brightness.dark;
+    Di.statusBarHeight = 30;
     return ThemeProvider(
       initTheme: lightTheme, //isPlatformDark ? darkTheme : lightTheme,
       builder: (context, theme) {

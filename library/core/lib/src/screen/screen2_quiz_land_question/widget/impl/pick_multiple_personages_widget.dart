@@ -113,11 +113,11 @@ class _PickMultiplePersonagesWidgetState extends State<PickMultiplePersonagesWid
             .applyConstraint(
               top: CId.headerImage.center,
               bottom: CId.hat.bottom,
+              left: parent.left,
+              right: parent.right,
               verticalBias: 0.55,
               height: 90,
               width: matchConstraint,
-              left: parent.left,
-              right: parent.right,
               zIndex: 11,
             )
       ],

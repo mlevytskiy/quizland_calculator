@@ -276,7 +276,7 @@ class _HarryPotterButtonState extends State<HarryPotterButton> {
             const SizedBox(
                 width: 265,
                 child: TypeThis(
-                  string: "Hogwards express",
+                  string: "Hogwarts express",
                   speed: 150,
                   textAlign: TextAlign.start,
                   style: TextStyle(
